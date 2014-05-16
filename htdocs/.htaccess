@@ -1,0 +1,17 @@
+#Options -Indexes
+RewriteEngine on
+
+RewriteBase /workspace/twmngtool/htdocs/
+RewriteCond $1 !^(index\.php|assets|images|css|js|.+\.css$|.+\.js$|.+\.png$|.+\.jpg$|robots\.txt)
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+RewriteCond %{REQUEST_URI} ^htaccess/ [NC,OR]
+RewriteCond %{REQUEST_URI} ^system/function/ [NC,OR]
+#just make sure the last rule does  NOT have an OR
+RewriteCond %{REQUEST_URI} ^system/class/ [NC]
+RewriteRule . - [R=404,L,NC]
+
+
