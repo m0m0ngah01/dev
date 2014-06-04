@@ -1,0 +1,3 @@
+[submodule "htdocs/adminLTE"]
+	path = htdocs/adminLTE
+	url = https://github.com/almasaeed2010/AdminLTE.git

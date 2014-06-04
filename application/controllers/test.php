@@ -27,18 +27,17 @@ class Test extends CI_Controller {
 		$test= array('first' => 'Lincoln', 'last' => 'Nebraska');
 		if(is_array($test))
 		{
-// 			$this-> enableModelClass();	
-// 			$this->load->view('info');
+			$this-> enableModelClass();	
+			$this->load->view('info');
 			$vw_params = array(
 					"first" => "test",
 					"last" => "OK!",
 			);
-// 			$this->load->view('my_action', $vw_params);
-			$this->load->view('m_index', $vw_params);				
+			$this->load->view('test/test_css_include', $vw_params);				
 		}
 		else 
 		{
-			$this->load->view('welcome_message');
+			$this->load->view('test/welcome_message');
 		}
 	}
 	
