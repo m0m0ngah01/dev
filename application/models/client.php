@@ -5,12 +5,12 @@
  */
 class Client extends CI_Model {
 
-	protected $_table_name;
+	protected $_table;
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->_table_name = "Client";
+		$this->_table = "client";
 		$this->init_connect();
 	}
 
@@ -38,7 +38,7 @@ class Client extends CI_Model {
 	 * @return string
 	 */
 	public function getName() {
-		return $this->_table_name;
+		return $this->_table;
 	}
 
 
@@ -47,24 +47,39 @@ class Client extends CI_Model {
 	 */
 	public function getAllClientListInObject(){
 		try {
-			$stmt = $this->selectAll();
-			return $stmt->result('object');
+			$ret = $this->findAll();
+			return $ret->result('object');
 		} catch (PDOException $e) {
 			echo $e -> getMessage();
 			die();
 		}
 	}
+	
+	
+	/**
+	 * 
+	 */
+	public function getAllClientListInArray(){
+		try {
+			$ret = $this->findAll();
+			return $ret->result();
+		} catch (PDOException $e) {
+			echo $e -> getMessage();
+			die();
+		}
+	}
+	
 
 	/**
 	 *
 	 */
-	private function selectAll() {
-		$stmt = $this->db->query('SELECT * FROM item');
+	private function findAll() {
+		$ret = $this->db->get($this->_table);
 
-		if(!$stmt) {
+		if(!$ret) {
 			exit($this->db->erroinfo());
 		}
-		return $stmt;
+		return $ret;
 	}
 
 }

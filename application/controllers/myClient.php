@@ -26,15 +26,25 @@ class MyClient extends CI_Controller {
 		$this->load->model('Client', 'cl');
 		$this->cl->getName();
 		
-		$cl_list = $this->cl->getAllClientListInObject();
+		$cl_list = $this->cl->getAllClientListInArray();
 		
-		var_dump($cl_list);
+//  		var_dump($cl_list);
 		
+// 		$data = array(
+// 				'title' => 'Hello!',
+// 		);
+// 		$data = array(
+// 				'title' => "Hello!",
+// 				'comp_tree' => array(
+// 						array("comp_name" => "hoge"),
+// 						array("comp_name" => "poyo"),
+// 						array("comp_name" => "niko")				
+// 						)
+// 		);
 		$data = array(
-				'title' => 'Hello!',
-				'blog_heading' => 'My Blog Heading'
+				'title' => "Hello!",
+				'comp_tree' => $cl_list;
 		);
-		
 		$this->next($data);
 	}
 	
