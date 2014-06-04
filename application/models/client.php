@@ -1,59 +1,72 @@
 <?php 
-
 /**
  * @author user
  *
  */
 class Client extends CI_Model {
-	
+
+	protected $_table_name;
+
 	public function __construct()
 	{
 		parent::__construct();
-		
+		$this->_table_name = "Client";
+		$this->init_connect();
+	}
+
+	/**
+	 *
+	 */
+	private function init_connect() {
+
 		try {
 			$this->load->database();
-			
+
 			if ($this->db->conn_id === FALSE)
 			{
 				echo "データベースに接続されていません。";
+				die();
 			}
-			else
-			{
-				$stmt = $this->db->query('SELECT * FROM hoge');
-			}
-			
-			if(!$stmt) {
-				exit($this->db->erroinfo());
-			}
-			
-			$result = $stmt->result('object');
-			
-			//var_dump($stmt);
+		} catch (PDOException $e) {
+			echo $e -> getMessage();
+			die();
+		}
 
-			echo 1333;
-			
-			echo $stmt->num_rows();
-			
-			/*
-			foreach ($stmt-> first_row() as $r) {
-				echo $r;
-			}
-			foreach ($result as $r) {
-				echo $r->name;
-				echo $r->client_id;
-			}
-			*/
-			
-		}catch (PDOException $e) {
-			
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getName() {
+		return $this->_table_name;
+	}
+
+
+	/**
+	 *
+	 */
+	public function getAllClientListInObject(){
+		try {
+			$stmt = $this->selectAll();
+			return $stmt->result('object');
+		} catch (PDOException $e) {
 			echo $e -> getMessage();
 			die();
 		}
 	}
-	
-	public function getAllById() {
-		
+
+	/**
+	 *
+	 */
+	private function selectAll() {
+		$stmt = $this->db->query('SELECT * FROM item');
+
+		if(!$stmt) {
+			exit($this->db->erroinfo());
+		}
+		return $stmt;
 	}
+
 }
 
 /* End of file welcome.php */

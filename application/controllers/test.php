@@ -24,25 +24,33 @@ class Test extends CI_Controller {
 	 */
 	public function index()
 	{
-		$test= array('first' => 'Lincoln', 'last' => 'Nebraska');
-		if(is_array($test))
-		{
-			$this-> enableModelClass();	
-			$this->load->view('info');
-			$vw_params = array(
-					"first" => "test",
-					"last" => "OK!",
-			);
-			$this->load->view('test/test_css_include', $vw_params);				
-		}
-		else 
-		{
-			$this->load->view('test/welcome_message');
-		}
+// 		$this-> enableModelClass();	
+		
+		$this->load->model('Client', 'cl_list');
+		echo $this->cl_list->getName();
+		
+		
+		
+// 		$test= array('first' => 'Lincoln', 'last' => 'Nebraska');
+// 		if(is_array($test))
+// 		{
+// 			$vw_params = array(
+// 					"first" => "test",
+// 					"last" => "OK!",
+// 			);
+// 			$this->load->view('test/test_css_include', $vw_params);				
+// 		}
+// 		else 
+// 		{
+// 			$this->load->view('test/welcome_message');
+// 		}
 	}
 	
 	
 	
+	/**
+	 * 
+	 */
 	public function view() {
 		
 		$vw_params = array(
@@ -53,13 +61,14 @@ class Test extends CI_Controller {
 	}
 	
 	
+	/**
+	 * @return string|boolean
+	 */
 	private function enableModelClass() {
 		
 		$this->load->model('Item', 'user');
 		
-		$firstname = 'taro';
-		
-		if ($name = $this->user->getNameJa($firstname)) {
+		if ($name = $this->user->getNameJa('taro')) {
 			return '名前= ' . $name."</br>";
 		}
 		

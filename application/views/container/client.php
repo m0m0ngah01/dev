@@ -2,7 +2,7 @@
 		<aside class="right-side">
 			<!-- Content Header (Page header) -->
 			<section class="content-header no-margin">
-				<h1 class="text-center">Project Management</h1>
+				<h1 class="text-center">Project Management {title}</h1>
 			</section>
 
 			<!-- Main content -->

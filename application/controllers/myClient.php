@@ -1,6 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Client extends CI_Controller {
+/**
+ * @author user
+ *
+ */
+class MyClient extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,19 +23,33 @@ class Client extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->next();
+		$this->load->model('Client', 'cl');
+		$this->cl->getName();
+		
+		$cl_list = $this->cl->getAllClientListInObject();
+		
+		var_dump($cl_list);
+		
+		$data = array(
+				'title' => 'Hello!',
+				'blog_heading' => 'My Blog Heading'
+		);
+		
+		$this->next($data);
 	}
+	
 
 	/**
 	 *
 	 */
-	public function next(){
+	public function next($data){
+		// user parse library  http://codeigniter.jp/user_guide_ja/libraries/parser.html
+		$this->load->library('parser');
+
 		$this->load->view('template/header');
 		$this->load->view('template/sidebar');
-		$this->load->view('container/client'); // only change this view
+		// set params
+		$this->parser->parse('container/client', $data);
 		$this->load->view('template/footer');
 	}
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

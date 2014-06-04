@@ -1,5 +1,8 @@
 <?php 
-
+/**
+ * @author user
+ *
+ */
 class Item extends CI_Model {
 	
 	public function __construct()
@@ -19,7 +22,7 @@ class Item extends CI_Model {
 			}
 			else
 			{
-				$stmt = $this->db->query('SELECT * FROM hoge');
+				$stmt = $this->db->query('SELECT * FROM item');
 			}
 			
 			if(!$stmt) {
@@ -41,7 +44,7 @@ class Item extends CI_Model {
 				echo $r->client_id;
 			}
 			*/
-			
+
 		}catch (PDOException $e) {
 			echo $e -> getMessage();
 			die();
@@ -54,6 +57,11 @@ class Item extends CI_Model {
 			return $this->_names[$name];
 		}
 		return FALSE;
+	}
+	
+	
+	public function getName() {
+		return "succeed!";
 	}
 }
 

@@ -184,7 +184,7 @@ $config['directory_trigger']	= 'd'; // experimental not currently in use
 |
 */
 #$config['log_threshold'] = 0;
-$config['log_threshold'] = 3; // detail
+$config['log_threshold'] = 4; // detail
 
 /*
 |--------------------------------------------------------------------------
