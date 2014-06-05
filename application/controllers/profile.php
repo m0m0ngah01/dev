@@ -4,9 +4,9 @@
  * @author user
  *
  */
-class Top extends CI_Controller {
+class Profile extends CI_Controller {
 
-
+	
 	/**
 	 * Index Page for this controller.
 	 *
@@ -24,17 +24,18 @@ class Top extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->Debug('start top');
+		$this->Debug('start profile');
 		
 		$this->load->model('db/Client_model', 'cl');
-		$cl_list = $this->cl->getAllClientListInObject();
-
+		$cl_list = $this->cl->getClientJoinedProject();
+		
 		$data = array(
+				'title' => "Hello!",
 				'comp_tree' => $cl_list,
 		);
 		$this->show($data);
 	}
-
+	
 
 	/**
 	 *
@@ -46,39 +47,32 @@ class Top extends CI_Controller {
 		$parts = array(
 				"header" => $this->load->view('template/vw_header'),
 				"sidebar" => $this->load->view('template/vw_sidebar'),
-				"main" => $this->parser->parse('container/vw_detail', $data),// set params
+				"main" => $this->parser->parse('container/vw_sub_list', $data),// set params
 				"footer" => $this->load->view('template/vw_footer')
 		);
-
+		
 		$this->load->view('layout',$parts);
 	}
-
-	/**
-	 * @param unknown_type $data
-	 */
-	private function showDump($data){
-		var_dump($data);
-	}
-
-
+	
+	
 	/**
 	 * @param unknown_type $msg
 	 */
 	private function Debug($msg) {
 		log_message('hoge',$msg);
 	}
-
-
+	
+	
 	/**
-	 *
+	 * 
 	 */
 	private function profileOn() {
 		$this->output->enable_profiler(TRUE);
 	}
-
-
+	
+	
 	/**
-	 *
+	 * 
 	 */
 	private function profileOff() {
 		$this->output->enable_profiler(FALSE);

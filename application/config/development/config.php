@@ -184,7 +184,7 @@ $config['directory_trigger']	= 'd'; // experimental not currently in use
 |
 */
 #$config['log_threshold'] = 0;
-$config['log_threshold'] = 3; // detail
+$config['log_threshold'] = 5; // detail
 
 /*
 |--------------------------------------------------------------------------
@@ -195,8 +195,7 @@ $config['log_threshold'] = 3; // detail
 | application/logs/ folder. Use a full server path with trailing slash.
 |
 */
-#$config['log_path'] = '';
-$config['log_path'] = '/var/log/twtool/';
+$config['log_path'] = '';
 
 /*
 |--------------------------------------------------------------------------
