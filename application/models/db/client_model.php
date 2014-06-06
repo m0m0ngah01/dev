@@ -32,7 +32,7 @@ class Client_model extends MY_Model {
 		return $ret->result_object();
 	}
 	
-	public function getClientJoinedProject() {
+	public function getClientListJoinedProject() {
 		$ret = $this->db->query("select 
   cl.client_id,
   cl.name as name,

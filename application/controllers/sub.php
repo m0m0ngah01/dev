@@ -4,8 +4,7 @@
  * @author user
  *
  */
-class Profile extends CI_Controller {
-
+class Sub extends CI_Controller {
 	
 	/**
 	 * Index Page for this controller.
@@ -24,34 +23,35 @@ class Profile extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->Debug('start profile');
+		$this->Debug('start sub');
 		
 		$this->load->model('db/Client_model', 'cl');
-		$cl_list = $this->cl->getClientJoinedProject();
+		$cl_list = $this->cl->getClientListJoinedProject();
 		
 		$data = array(
-				'title' => "Hello!",
 				'comp_tree' => $cl_list,
 		);
 		$this->show($data);
 	}
 	
-
+	
 	/**
-	 *
+	 * @param unknown_type $data
+	 * 
+	 * user parse library  http://codeigniter.jp/user_guide_ja/libraries/parser.html
+	 * 
 	 */
 	public function show($data){
-		// user parse library  http://codeigniter.jp/user_guide_ja/libraries/parser.html
 		$this->load->library('parser');
 
 		$parts = array(
 				"header" => $this->load->view('template/vw_header'),
 				"sidebar" => $this->load->view('template/vw_sidebar'),
-				"main" => $this->parser->parse('container/vw_sub_list', $data),// set params
+				"main" => $this->parser->parse('container/vw_sub', $data),// set params
 				"footer" => $this->load->view('template/vw_footer')
 		);
 		
-		$this->load->view('layout',$parts);
+		$this->load->view('layout',$parts,TRUE);
 	}
 	
 	

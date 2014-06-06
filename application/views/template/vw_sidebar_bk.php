@@ -4,8 +4,18 @@
 	<!-- sidebar: style can be found in sidebar.less -->
 	<section class="sidebar">
 		<!-- Sidebar user panel -->
+		<div class="user-panel">
+			<div class="pull-left image">
+				<img src="adminLTE/img/avatar3.png" class="img-circle" alt="User Image" />
+			</div>
+			<div class="pull-left info">
+				<p>Hello, Jane</p>
 
-
+				<a href="#">
+					<i class="fa fa-circle text-success"></i> Online
+				</a>
+			</div>
+		</div>
 		<!-- search form -->
 		<form action="#" method="get" class="sidebar-form">
 			<div class="input-group">
@@ -17,23 +27,8 @@
 			</div>
 		</form>
 		<!-- /.search form -->
-
 		<!-- sidebar menu: : style can be found in sidebar.less -->
 		<ul class="sidebar-menu">
-			{cl_tree}
-			<li class="treeview"><a href="#">
-					<span>{name}</span> <i class="fa fa-angle-left pull-right"></i>
-				</a>
-				<ul class="treeview-menu">
-					<li><a href="top/{id}">
-							<span>{p_name}</span> <i class="fa fa-angle-left pull-right"></i>
-						</a>
-					</li>
-				</ul>
-			</li> {/cl_tree}
-
-
-
 			<li class="active"><a href="index.html">
 					<i class="fa fa-dashboard"></i> <span>Dashboard</span>
 				</a>

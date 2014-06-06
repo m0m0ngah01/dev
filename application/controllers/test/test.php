@@ -24,10 +24,14 @@ class Test extends CI_Controller {
 	 */
 	public function index()
 	{
+		
+		
+				$this->load->view('pre/index');
+		
 // 		$this-> enableModelClass();	
 		
-		$this->load->model('Client', 'cl_list');
-		echo $this->cl_list->getName();
+// 		$this->load->model('Client', 'cl_list');
+// 		echo $this->cl_list->getName();
 		
 		
 		

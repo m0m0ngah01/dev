@@ -1,14 +1,15 @@
 
 <!-- Right side column. Contains the navbar and content of the page -->
-<aside
-	class="right-side">
+<aside class="right-side">
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
 		<h1>
 			Dashboard <small>Control panel</small>
 		</h1>
 		<ol class="breadcrumb">
-			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+			<li><a href="#">
+					<i class="fa fa-dashboard"></i> Home
+				</a></li>
 			<li class="active">Dashboard</li>
 		</ol>
 	</section>
@@ -28,8 +29,8 @@
 					<div class="icon">
 						<i class="ion ion-bag"></i>
 					</div>
-					<a href="#" class="small-box-footer"> More info <i
-						class="fa fa-arrow-circle-right"></i>
+					<a href="#" class="small-box-footer">
+						More info <i class="fa fa-arrow-circle-right"></i>
 					</a>
 				</div>
 			</div>
@@ -46,8 +47,8 @@
 					<div class="icon">
 						<i class="ion ion-stats-bars"></i>
 					</div>
-					<a href="#" class="small-box-footer"> More info <i
-						class="fa fa-arrow-circle-right"></i>
+					<a href="#" class="small-box-footer">
+						More info <i class="fa fa-arrow-circle-right"></i>
 					</a>
 				</div>
 			</div>
@@ -62,8 +63,8 @@
 					<div class="icon">
 						<i class="ion ion-person-add"></i>
 					</div>
-					<a href="#" class="small-box-footer"> More info <i
-						class="fa fa-arrow-circle-right"></i>
+					<a href="#" class="small-box-footer">
+						More info <i class="fa fa-arrow-circle-right"></i>
 					</a>
 				</div>
 			</div>
@@ -78,8 +79,8 @@
 					<div class="icon">
 						<i class="ion ion-pie-graph"></i>
 					</div>
-					<a href="#" class="small-box-footer"> More info <i
-						class="fa fa-arrow-circle-right"></i>
+					<a href="#" class="small-box-footer">
+						More info <i class="fa fa-arrow-circle-right"></i>
 					</a>
 				</div>
 			</div>
@@ -103,16 +104,13 @@
 					<div class="box-header">
 						<!-- tools box -->
 						<div class="pull-right box-tools">
-							<button class="btn btn-danger btn-sm refresh-btn"
-								data-toggle="tooltip" title="Reload">
+							<button class="btn btn-danger btn-sm refresh-btn" data-toggle="tooltip" title="Reload">
 								<i class="fa fa-refresh"></i>
 							</button>
-							<button class="btn btn-danger btn-sm" data-widget='collapse'
-								data-toggle="tooltip" title="Collapse">
+							<button class="btn btn-danger btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse">
 								<i class="fa fa-minus"></i>
 							</button>
-							<button class="btn btn-danger btn-sm" data-widget='remove'
-								data-toggle="tooltip" title="Remove">
+							<button class="btn btn-danger btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove">
 								<i class="fa fa-times"></i>
 							</button>
 						</div>
@@ -132,38 +130,31 @@
 								<div class="pad">
 									<!-- Progress bars -->
 									<div class="clearfix">
-										<span class="pull-left">Bandwidth</span> <small
-											class="pull-right">10/200 GB</small>
+										<span class="pull-left">Bandwidth</span> <small class="pull-right">10/200 GB</small>
 									</div>
 									<div class="progress xs">
-										<div class="progress-bar progress-bar-green"
-											style="width: 70%;"></div>
+										<div class="progress-bar progress-bar-green" style="width: 70%;"></div>
 									</div>
 
 									<div class="clearfix">
-										<span class="pull-left">Transfered</span> <small
-											class="pull-right">10 GB</small>
+										<span class="pull-left">Transfered</span> <small class="pull-right">10 GB</small>
 									</div>
 									<div class="progress xs">
 										<div class="progress-bar progress-bar-red" style="width: 70%;"></div>
 									</div>
 
 									<div class="clearfix">
-										<span class="pull-left">Activity</span> <small
-											class="pull-right">73%</small>
+										<span class="pull-left">Activity</span> <small class="pull-right">73%</small>
 									</div>
 									<div class="progress xs">
-										<div class="progress-bar progress-bar-light-blue"
-											style="width: 70%;"></div>
+										<div class="progress-bar progress-bar-light-blue" style="width: 70%;"></div>
 									</div>
 
 									<div class="clearfix">
-										<span class="pull-left">FTP</span> <small class="pull-right">30
-											GB</small>
+										<span class="pull-left">FTP</span> <small class="pull-right">30 GB</small>
 									</div>
 									<div class="progress xs">
-										<div class="progress-bar progress-bar-aqua"
-											style="width: 70%;"></div>
+										<div class="progress-bar progress-bar-aqua" style="width: 70%;"></div>
 									</div>
 									<!-- Buttons -->
 									<p>
@@ -181,23 +172,18 @@
 					<!-- /.box-body -->
 					<div class="box-footer">
 						<div class="row">
-							<div class="col-xs-4 text-center"
-								style="border-right: 1px solid #f4f4f4">
-								<input type="text" class="knob" data-readonly="true" value="80"
-									data-width="60" data-height="60" data-fgColor="#f56954" />
+							<div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+								<input type="text" class="knob" data-readonly="true" value="80" data-width="60" data-height="60" data-fgColor="#f56954" />
 								<div class="knob-label">CPU</div>
 							</div>
 							<!-- ./col -->
-							<div class="col-xs-4 text-center"
-								style="border-right: 1px solid #f4f4f4">
-								<input type="text" class="knob" data-readonly="true" value="50"
-									data-width="60" data-height="60" data-fgColor="#00a65a" />
+							<div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+								<input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgColor="#00a65a" />
 								<div class="knob-label">Disk</div>
 							</div>
 							<!-- ./col -->
 							<div class="col-xs-4 text-center">
-								<input type="text" class="knob" data-readonly="true" value="30"
-									data-width="60" data-height="60" data-fgColor="#3c8dbc" />
+								<input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgColor="#3c8dbc" />
 								<div class="knob-label">RAM</div>
 							</div>
 							<!-- ./col -->
@@ -219,10 +205,8 @@
 					</ul>
 					<div class="tab-content no-padding">
 						<!-- Morris chart - Sales -->
-						<div class="chart tab-pane active" id="revenue-chart"
-							style="position: relative; height: 300px;"></div>
-						<div class="chart tab-pane" id="sales-chart"
-							style="position: relative; height: 300px;"></div>
+						<div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
+						<div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
 					</div>
 				</div>
 				<!-- /.nav-tabs-custom -->
@@ -237,8 +221,7 @@
 						<div class="pull-right box-tools">
 							<!-- button with a dropdown -->
 							<div class="btn-group">
-								<button class="btn btn-warning btn-sm dropdown-toggle"
-									data-toggle="dropdown">
+								<button class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">
 									<i class="fa fa-bars"></i>
 								</button>
 								<ul class="dropdown-menu pull-right" role="menu">
@@ -267,8 +250,7 @@
 						<h3 class="box-title">Quick Email</h3>
 						<!-- tools box -->
 						<div class="pull-right box-tools">
-							<button class="btn btn-info btn-sm" data-widget="remove"
-								data-toggle="tooltip" title="Remove">
+							<button class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
 								<i class="fa fa-times"></i>
 							</button>
 						</div>
@@ -277,12 +259,10 @@
 					<div class="box-body">
 						<form action="#" method="post">
 							<div class="form-group">
-								<input type="email" class="form-control" name="emailto"
-									placeholder="Email to:" />
+								<input type="email" class="form-control" name="emailto" placeholder="Email to:" />
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" name="subject"
-									placeholder="Subject" />
+								<input type="text" class="form-control" name="subject" placeholder="Subject" />
 							</div>
 							<div>
 								<textarea class="textarea" placeholder="Message"
@@ -306,13 +286,10 @@
 					<div class="box-header">
 						<!-- tools box -->
 						<div class="pull-right box-tools">
-							<button class="btn btn-primary btn-sm daterange pull-right"
-								data-toggle="tooltip" title="Date range">
+							<button class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range">
 								<i class="fa fa-calendar"></i>
 							</button>
-							<button class="btn btn-primary btn-sm pull-right"
-								data-widget='collapse' data-toggle="tooltip" title="Collapse"
-								style="margin-right: 5px;">
+							<button class="btn btn-primary btn-sm pull-right" data-widget='collapse' data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
 								<i class="fa fa-minus"></i>
 							</button>
 						</div>
@@ -390,8 +367,7 @@
 						<h3 class="box-title">
 							<i class="fa fa-comments-o"></i> Chat
 						</h3>
-						<div class="box-tools pull-right" data-toggle="tooltip"
-							title="Status">
+						<div class="box-tools pull-right" data-toggle="tooltip" title="Status">
 							<div class="btn-group" data-toggle="btn-toggle">
 								<button type="button" class="btn btn-default btn-sm active">
 									<i class="fa fa-square text-green"></i>
@@ -407,11 +383,11 @@
 						<div class="item">
 							<img src="img/avatar.png" alt="user image" class="online" />
 							<p class="message">
-								<a href="#" class="name"> <small class="text-muted pull-right"><i
-										class="fa fa-clock-o"></i> 2:15</small> Mike Doe
-								</a> I would like to meet you to discuss the latest news about
-								the arrival of the new theme. They say it is going to be one the
-								best themes on the market
+								<a href="#" class="name">
+									<small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 2:15</small> Mike Doe
+								</a>
+								I would like to meet you to discuss the latest news about the arrival of the new theme. They say it is going to be one the best themes on the
+								market
 							</p>
 							<div class="attachment">
 								<h4>Attachments:</h4>
@@ -427,23 +403,23 @@
 						<div class="item">
 							<img src="img/avatar2.png" alt="user image" class="offline" />
 							<p class="message">
-								<a href="#" class="name"> <small class="text-muted pull-right"><i
-										class="fa fa-clock-o"></i> 5:15</small> Jane Doe
-								</a> I would like to meet you to discuss the latest news about
-								the arrival of the new theme. They say it is going to be one the
-								best themes on the market
+								<a href="#" class="name">
+									<small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:15</small> Jane Doe
+								</a>
+								I would like to meet you to discuss the latest news about the arrival of the new theme. They say it is going to be one the best themes on the
+								market
 							</p>
 						</div>
 						<!-- /.item -->
 						<!-- chat item -->
 						<div class="item">
-							<img src="img/avatar3.png" alt="user image" class="offline" />
+							<img src="adminLTE/img/avatar3.png" alt="user image" class="offline" />
 							<p class="message">
-								<a href="#" class="name"> <small class="text-muted pull-right"><i
-										class="fa fa-clock-o"></i> 5:30</small> Susan Doe
-								</a> I would like to meet you to discuss the latest news about
-								the arrival of the new theme. They say it is going to be one the
-								best themes on the market
+								<a href="#" class="name">
+									<small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:30</small> Susan Doe
+								</a>
+								I would like to meet you to discuss the latest news about the arrival of the new theme. They say it is going to be one the best themes on the
+								market
 							</p>
 						</div>
 						<!-- /.item -->
@@ -481,58 +457,44 @@
 					<div class="box-body">
 						<ul class="todo-list">
 							<li>
-								<!-- drag handle --> <span class="handle"> <i
-									class="fa fa-ellipsis-v"></i> <i class="fa fa-ellipsis-v"></i>
-							</span> <!-- checkbox --> <input type="checkbox" value="" name="" />
-								<!-- todo text --> <span class="text">Design a nice theme</span>
-								<!-- Emphasis label --> <small class="label label-danger"><i
-									class="fa fa-clock-o"></i> 2 mins</small> <!-- General tools such as edit or delete-->
+								<!-- drag handle --> <span class="handle"> <i class="fa fa-ellipsis-v"></i> <i class="fa fa-ellipsis-v"></i>
+							</span> <!-- checkbox --> <input type="checkbox" value="" name="" /> <!-- todo text --> <span class="text">Design a nice theme</span> <!-- Emphasis label -->
+								<small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small> <!-- General tools such as edit or delete-->
 								<div class="tools">
 									<i class="fa fa-edit"></i> <i class="fa fa-trash-o"></i>
 								</div>
 							</li>
-							<li><span class="handle"> <i class="fa fa-ellipsis-v"></i> <i
-									class="fa fa-ellipsis-v"></i>
-							</span> <input type="checkbox" value="" name="" /> <span
-								class="text">Make the theme responsive</span> <small
-								class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
+							<li><span class="handle"> <i class="fa fa-ellipsis-v"></i> <i class="fa fa-ellipsis-v"></i>
+							</span> <input type="checkbox" value="" name="" /> <span class="text">Make the theme responsive</span> <small class="label label-info"><i
+									class="fa fa-clock-o"></i> 4 hours</small>
 								<div class="tools">
 									<i class="fa fa-edit"></i> <i class="fa fa-trash-o"></i>
 								</div>
 							</li>
-							<li><span class="handle"> <i class="fa fa-ellipsis-v"></i> <i
-									class="fa fa-ellipsis-v"></i>
-							</span> <input type="checkbox" value="" name="" /> <span
-								class="text">Let theme shine like a star</span> <small
-								class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>
+							<li><span class="handle"> <i class="fa fa-ellipsis-v"></i> <i class="fa fa-ellipsis-v"></i>
+							</span> <input type="checkbox" value="" name="" /> <span class="text">Let theme shine like a star</span> <small class="label label-warning"><i
+									class="fa fa-clock-o"></i> 1 day</small>
 								<div class="tools">
 									<i class="fa fa-edit"></i> <i class="fa fa-trash-o"></i>
 								</div>
 							</li>
-							<li><span class="handle"> <i class="fa fa-ellipsis-v"></i> <i
-									class="fa fa-ellipsis-v"></i>
-							</span> <input type="checkbox" value="" name="" /> <span
-								class="text">Let theme shine like a star</span> <small
-								class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
+							<li><span class="handle"> <i class="fa fa-ellipsis-v"></i> <i class="fa fa-ellipsis-v"></i>
+							</span> <input type="checkbox" value="" name="" /> <span class="text">Let theme shine like a star</span> <small class="label label-success"><i
+									class="fa fa-clock-o"></i> 3 days</small>
 								<div class="tools">
 									<i class="fa fa-edit"></i> <i class="fa fa-trash-o"></i>
 								</div>
 							</li>
-							<li><span class="handle"> <i class="fa fa-ellipsis-v"></i> <i
-									class="fa fa-ellipsis-v"></i>
-							</span> <input type="checkbox" value="" name="" /> <span
-								class="text">Check your messages and notifications</span> <small
+							<li><span class="handle"> <i class="fa fa-ellipsis-v"></i> <i class="fa fa-ellipsis-v"></i>
+							</span> <input type="checkbox" value="" name="" /> <span class="text">Check your messages and notifications</span> <small
 								class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
 								<div class="tools">
 									<i class="fa fa-edit"></i> <i class="fa fa-trash-o"></i>
 								</div>
 							</li>
-							<li><span class="handle"> <i class="fa fa-ellipsis-v"></i> <i
-									class="fa fa-ellipsis-v"></i>
-							</span> <input type="checkbox" value="" name="" /> <span
-								class="text">Let theme shine like a star</span> <small
-								class="label label-default"><i class="fa fa-clock-o"></i> 1
-									month</small>
+							<li><span class="handle"> <i class="fa fa-ellipsis-v"></i> <i class="fa fa-ellipsis-v"></i>
+							</span> <input type="checkbox" value="" name="" /> <span class="text">Let theme shine like a star</span> <small class="label label-default"><i
+									class="fa fa-clock-o"></i> 1 month</small>
 								<div class="tools">
 									<i class="fa fa-edit"></i> <i class="fa fa-trash-o"></i>
 								</div>

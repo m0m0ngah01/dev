@@ -2,7 +2,7 @@
 RewriteEngine on
 
 RewriteBase /workspace/twmngtool/htdocs/
-RewriteCond $1 !^(index\.php|assets|images|css|js|.+\.css$|.+\.js$|.+\.png$|.+\.jpg$|robots\.txt)
+RewriteCond $1 !^(index\.php|assets|images|css|js|.+\.css$|.+\.js$|.+\.png$|.+\.jpg$|.+\.woff$|robots\.txt)
 
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{REQUEST_FILENAME} !-d

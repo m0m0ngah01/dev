@@ -15,7 +15,7 @@
 					<div class="box-body">
 						<div class="row">
 
-							<!-- 検索画面の挿入 -->
+
 							<div class="col-md-3 col-sm-4">
 								<div class="box-header">
 									<i class="fa fa-inbox"></i>
