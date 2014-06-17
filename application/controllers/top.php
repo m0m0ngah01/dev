@@ -71,7 +71,7 @@ class Top extends CI_Controller {
 		// setting pagenation
 		$config['base_url'] = 'http://192.168.10.77/mngtool/top';
 		$config['total_rows'] = $total_rows;
-		$config['per_page'] = 10;
+		$config['per_page'] = 1;
 
 		// 		var_dump($main);
 		$this->pagination->initialize($config);
