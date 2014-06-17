@@ -15,36 +15,14 @@
 					<div class="box-body">
 						<div class="row">
 
-							<!-- 検索画面の挿入 -->
-							<div class="col-md-3 col-sm-4">
-								<div class="box-header">
-									<i class="fa fa-inbox"></i>
-									<h3 class="box-title">Client</h3>
-								</div>
-
-								<!-- Navigation - folders-->
-								<div class=".pre-scrollable" style="margin-top: 15px;">
-									<section class="sidebar">
-										<!-- sidebar menu: : style can be found in sidebar.less -->
-										<ul class="sidebar-menu">
-											{comp_tree}
-											<li class="treeview"><a href="#">
-													<span>{name}</span> <i class="fa fa-angle-left pull-right"></i>
-												</a>
-												<ul class="treeview-menu">
-													<li><a href="top/{id}">
-															<span>{p_name}</span> <i class="fa fa-angle-left pull-right"></i>
-														</a>
-													</li>
-												</ul>
-											</li> {/comp_tree}
-										</ul>
-									</section>
-								</div>
+							<div class="box-header">
+								<i class="fa fa-inbox"></i>
+								<h3 class="box-title">Client</h3>
 							</div>
+							<!-- 検索画面の挿入 -->
 
 
-							<div class="col-md-9 col-sm-8">
+							<div >
 								<!-- /.row -->
 
 								<div class="table-responsive">
