@@ -22,7 +22,7 @@
 							<!-- 検索画面の挿入 -->
 
 
-							<div >
+							<div>
 								<!-- /.row -->
 
 								<div class="table-responsive">
@@ -31,12 +31,13 @@
 										<thead>
 											<tr>
 												<th rowspan="2">No.</th>
-												<th nowrap rowspan="2">診断ID</th>
+												<!-- 												<th nowrap rowspan="2">診断ID</th> -->
 												<th nowrap rowspan="2">診断名</th>
 												<th nowrap class="status_th" rowspan="2">ステータス</th>
 												<th rowspan="2">診断</th>
-												<th class="t15" nowrap rowspan="2">オープン<br />ポート
-												</th>
+
+												<!-- 												<th class="t15" nowrap rowspan="2">オープン<br />ポート -->
+												<!-- 												</th> -->
 												<th colspan="7">検出件数</th>
 											</tr>
 											<tr>
@@ -49,18 +50,19 @@
 											</tr>
 										</thead>
 										<tbody>
+											{pr_list}
 											<tr>
 												<th>1</th>
-												<td class="center ids">5204</td>
-												<td title="http://stg.kurihaku.jp/" nowrap><a href="/vulnerability_list/5204" title="TW201306M002.トランスコスモス">TW201306M002.トランスコスモス</a>
+												<td title="{pr_url}" nowrap><a href="/vulnerability_list/{p_id}" title="{p_name}">{p_name}</a>
 												</td>
-												<td nowrap class="center status_td"><input type="hidden" id="status_id5204" value="27"></input> <span class="status_ja5204">終了</span>
+												<td nowrap class="center status_td"><input type="hidden" id="status_id5204" value="27"></input> <span class="status_ja5204">{status}</span>
 												</td>
-												<td nowrap class="audit_time"><a href="/vulnerability_list/5204" title="診断結果詳細へ">
-														開始&nbsp;2014/05/30 (金) 01:20:05<br /> 終了&nbsp;2014/05/30 (金) 01:20:26
+												<td nowrap class="audit_time"><a href="/vulnerability_list/{p_id}" title="診断結果詳細へ">
+														予定開始&nbsp;{pre_start_date}&emsp;開始&nbsp;{start_date}
+														<br />
+														予定終了&nbsp;{pre_end_date}&emsp;終了&nbsp;{end_date}
 													</a>
 												</td>
-												<td class="center">-</td>
 												<td class="center">0</td>
 												<td class="center">0</td>
 												<td class="center">0</td>
@@ -68,25 +70,46 @@
 												<td class="center">0</td>
 												<td class="center">0</td>
 											</tr>
-											<tr>
-												<th>2</th>
-												<td class="center ids">5203</td>
-												<td titel="http://stg1.dsp.co.jp/" nowrap><a href="/vulnerability_list/5203" title="TW201306M002.トランスコスモス">TW201306M002.トランスコスモス</a>
-												</td>
-												<td nowrap class="center status_td"><input type="hidden" id="status_id5203" value="27"></input> <span class="status_ja5203"> 終了 </span>
-												</td>
-												<td nowrap class="audit_time"><a href="/vulnerability_list/5203" title="診断結果詳細へ">
-														開始&nbsp;2014/05/30 (金) 01:10:03<br /> 終了&nbsp;2014/05/30 (金) 01:10:24
-													</a>
-												</td>
-												<td class="center">-</td>
-												<td class="center">0</td>
-												<td class="center">0</td>
-												<td class="center">0</td>
-												<td class="center">0</td>
-												<td class="center">0</td>
-												<td class="center">0</td>
-											</tr>
+											{/pr_list}
+											<!-- 											<tr> -->
+											<!-- 												<th>1</th> -->
+											<!-- 												<td class="center ids">5204</td> -->
+											<!-- 												<td title="http://stg.kurihaku.jp/" nowrap><a href="/vulnerability_list/5204" title="TW201306M002.トランスコスモス">TW201306M002.トランスコスモス</a> -->
+											<!-- 												</td> -->
+											<!-- 												<td nowrap class="center status_td"><input type="hidden" id="status_id5204" value="27"></input> <span class="status_ja5204">終了</span> -->
+											<!-- 												</td> -->
+											<!-- 												<td nowrap class="audit_time"><a href="/vulnerability_list/5204" title="診断結果詳細へ"> -->
+											<!-- 														予定開始&nbsp;2014/05/30 (金) 01:20:05 開始&nbsp;2014/05/30 (金) 01:20:05 <br />予定終了&nbsp;2014/05/30 (金) 01:20:26 終了&nbsp;2014/05/30 (金) -->
+											<!-- 														01:20:26 -->
+											<!-- 													</a> -->
+											<!-- 												</td> -->
+											<!-- 												<td class="center">-</td> -->
+											<!-- 												<td class="center">0</td> -->
+											<!-- 												<td class="center">0</td> -->
+											<!-- 												<td class="center">0</td> -->
+											<!-- 												<td class="center">0</td> -->
+											<!-- 												<td class="center">0</td> -->
+											<!-- 												<td class="center">0</td> -->
+											<!-- 											</tr> -->
+											<!-- 											<tr> -->
+											<!-- 												<th>2</th> -->
+											<!-- 												<td class="center ids">5203</td> -->
+											<!-- 												<td titel="http://stg1.dsp.co.jp/" nowrap><a href="/vulnerability_list/5203" title="TW201306M002.トランスコスモス">TW201306M002.トランスコスモス</a> -->
+											<!-- 												</td> -->
+											<!-- 												<td nowrap class="center status_td"><input type="hidden" id="status_id5203" value="27"></input> <span class="status_ja5203"> 終了 </span> -->
+											<!-- 												</td> -->
+											<!-- 												<td nowrap class="audit_time"><a href="/vulnerability_list/5203" title="診断結果詳細へ"> -->
+											<!-- 														開始&nbsp;2014/05/30 (金) 01:10:03<br /> 終了&nbsp;2014/05/30 (金) 01:10:24 -->
+											<!-- 													</a> -->
+											<!-- 												</td> -->
+											<!-- 												<td class="center">-</td> -->
+											<!-- 												<td class="center">0</td> -->
+											<!-- 												<td class="center">0</td> -->
+											<!-- 												<td class="center">0</td> -->
+											<!-- 												<td class="center">0</td> -->
+											<!-- 												<td class="center">0</td> -->
+											<!-- 												<td class="center">0</td> -->
+											<!-- 											</tr> -->
 
 										</tbody>
 									</table>
@@ -101,6 +124,7 @@
 					<!-- /.box-body -->
 					<div class="box-footer clearfix">
 						<div class="pull-right">
+						{pagination}
 							<small>Showing 1-12/1,240</small>
 							<button class="btn btn-xs btn-primary">
 								<i class="fa fa-caret-left"></i>

@@ -15,23 +15,6 @@ class Client_model extends MY_Model {
 	}
 
 
-	/**
-	 *
-	 */
-	public function getAllClientListInArray(){
-		$ret = $this->findAll();
-		return $ret->result_array();
-	}
-
-
-	/**
-	 *
-	 */
-	public function getAllClientListInObject(){
-		$ret = $this->findAll();
-		return $ret->result_object();
-	}
-	
 	public function getClientListJoinedProject() {
 		
 		$this->db->select('

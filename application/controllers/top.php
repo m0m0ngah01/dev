@@ -6,6 +6,39 @@
  */
 class Top extends CI_Controller {
 
+	/**
+	 * @var unknown_type
+	 */
+	private $viewparams_ = array('sidebar' => array() , 'main' => array() );
+
+
+	/**
+	 *
+	 */
+	public function __construct() {
+		parent::__construct();
+
+		$this->Debug('start top');
+
+		$this->load->model('db/Client_model' ,'cl');
+		$this->load->model('db/Project_model' ,'pr');
+		$this->load->library('pagination');
+	}
+
+
+	/**
+	 * @param unknown_type $key
+	 * @param unknown_type $data
+	 */
+	private function setViewParams($key ,$data) {
+
+		if(array_key_exists($key, $this->viewparams_)) {
+			$this->viewparams_[$key] += $data ;
+		} else {
+			$this->viewparams_ += $data ;
+		}
+	}
+	
 
 	/**
 	 * Index Page for this controller.
@@ -24,21 +57,30 @@ class Top extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->Debug('start top');
-
-		//
-		$this->load->model('db/Client_model', 'cl');
+		// collect client list
 		$cl_list = $this->cl->getClientListJoinedProject();
-		$test = $this -> makeProLi($cl_list);
+		$cl_tree = $this -> makeProLi($cl_list);
+		$this->setViewParams('sidebar', array('cl_tree' => $cl_tree,));
 
-		// 		var_dump($test);
+		// collect prfile list
+		$pr_list = $this->pr->getAllListForTopMenue();
+		$this->setViewParams('main', array('pr_list' => $pr_list,));
+		
+		$total_rows = $this->pr->getTotalRowsForTopMenue();
+		
+		// setting pagenation
+		$config['base_url'] = 'http://192.168.10.77/mngtool/top';
+		$config['total_rows'] = $total_rows;
+		$config['per_page'] = 10;
 
-
-		$side = array(
-				'cl_tree' => $test,
-		);
-
-		$this->show($side);
+		// 		var_dump($main);
+		$this->pagination->initialize($config);
+		
+		$this->setViewParams('main', array('pagination' => $this->pagination->create_links()));
+		
+		
+		
+		$this->show();
 	}
 
 
@@ -128,14 +170,13 @@ class Top extends CI_Controller {
 	 * user parse library  http://codeigniter.jp/user_guide_ja/libraries/parser.html
 	 *
 	 */
-	public function show($side , $data=NULL){
+	public function show(){
 		$this->load->library('parser');
 
 		$parts = array(
 				"header" => $this->load->view('template/vw_header'),
-				"sidebar" => $this->parser->parse('template/vw_sidebar',$side),
-// 				"main" => $this->parser->parse('container/vw_top', $data),// set params
-				"main" => $this->load->view('container/vw_top'),
+				"sidebar" => $this->parser->parse('template/vw_sidebar',$this->viewparams_['sidebar']),
+				"main" => $this->parser->parse('container/vw_top', $this->viewparams_['main']),// set params
 				"footer" => $this->load->view('template/vw_footer')
 		);
 

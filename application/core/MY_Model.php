@@ -65,6 +65,25 @@ class MY_Model extends CI_Model {
 	}
 
 	/**
+	 *
+	 */
+	protected function getAllClientListInArray(){
+		$ret = $this->findAll();
+		return $ret->result_array();
+	}
+	
+	
+	/**
+	 *
+	 */
+	protected function getAllClientListInObject(){
+		$ret = $this->findAll();
+		return $ret->result_object();
+	}
+	
+	
+	
+	/**
 	 * @return boolean
 	 */
 	public function insert() {
