@@ -71,46 +71,6 @@
 												<td class="center">0</td>
 											</tr>
 											{/pr_list}
-											<!-- 											<tr> -->
-											<!-- 												<th>1</th> -->
-											<!-- 												<td class="center ids">5204</td> -->
-											<!-- 												<td title="http://stg.kurihaku.jp/" nowrap><a href="/vulnerability_list/5204" title="TW201306M002.トランスコスモス">TW201306M002.トランスコスモス</a> -->
-											<!-- 												</td> -->
-											<!-- 												<td nowrap class="center status_td"><input type="hidden" id="status_id5204" value="27"></input> <span class="status_ja5204">終了</span> -->
-											<!-- 												</td> -->
-											<!-- 												<td nowrap class="audit_time"><a href="/vulnerability_list/5204" title="診断結果詳細へ"> -->
-											<!-- 														予定開始&nbsp;2014/05/30 (金) 01:20:05 開始&nbsp;2014/05/30 (金) 01:20:05 <br />予定終了&nbsp;2014/05/30 (金) 01:20:26 終了&nbsp;2014/05/30 (金) -->
-											<!-- 														01:20:26 -->
-											<!-- 													</a> -->
-											<!-- 												</td> -->
-											<!-- 												<td class="center">-</td> -->
-											<!-- 												<td class="center">0</td> -->
-											<!-- 												<td class="center">0</td> -->
-											<!-- 												<td class="center">0</td> -->
-											<!-- 												<td class="center">0</td> -->
-											<!-- 												<td class="center">0</td> -->
-											<!-- 												<td class="center">0</td> -->
-											<!-- 											</tr> -->
-											<!-- 											<tr> -->
-											<!-- 												<th>2</th> -->
-											<!-- 												<td class="center ids">5203</td> -->
-											<!-- 												<td titel="http://stg1.dsp.co.jp/" nowrap><a href="/vulnerability_list/5203" title="TW201306M002.トランスコスモス">TW201306M002.トランスコスモス</a> -->
-											<!-- 												</td> -->
-											<!-- 												<td nowrap class="center status_td"><input type="hidden" id="status_id5203" value="27"></input> <span class="status_ja5203"> 終了 </span> -->
-											<!-- 												</td> -->
-											<!-- 												<td nowrap class="audit_time"><a href="/vulnerability_list/5203" title="診断結果詳細へ"> -->
-											<!-- 														開始&nbsp;2014/05/30 (金) 01:10:03<br /> 終了&nbsp;2014/05/30 (金) 01:10:24 -->
-											<!-- 													</a> -->
-											<!-- 												</td> -->
-											<!-- 												<td class="center">-</td> -->
-											<!-- 												<td class="center">0</td> -->
-											<!-- 												<td class="center">0</td> -->
-											<!-- 												<td class="center">0</td> -->
-											<!-- 												<td class="center">0</td> -->
-											<!-- 												<td class="center">0</td> -->
-											<!-- 												<td class="center">0</td> -->
-											<!-- 											</tr> -->
-
 										</tbody>
 									</table>
 

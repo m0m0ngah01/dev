@@ -13,31 +13,6 @@ class Project_model extends MY_Model {
 		parent::__construct();
 	}
 
-	
-	/**
-	 * 
-	 */
-	public function getTotalRowsForTopMenue() {
-		$ret = $this ->findJoinedAllClientForTopMenue();
-
-		if(!$ret) {
-			exit($this->db->erroinfo());
-		}
-		return $ret->num_rows();
-	}
-
-	/**
-	 * 
-	 */
-	public function getAllListForTopMenue() {
-		$ret = $this ->findJoinedAllClientForTopMenue();
-		
-		if(!$ret) {
-			exit($this->db->erroinfo());
-		}
-		return $ret->result_object();
-	}
-	
 	/**
 	 * 
 	 */
@@ -56,7 +31,51 @@ class Project_model extends MY_Model {
 		$this->db->from('project pj');
 		$this->db->join('project_status ps', 'pj.status = ps.code' ,'left');
 
-		return$this->db->get();
+// 		$ret = $this->db->get();
+		
+// 		if(!$ret) {
+// 			exit($this->db->erroinfo());
+// 		}
+// 		return $ret;
 	}
 	
+	/**
+	 *
+	 */
+	public function findTotalRowsForTopMenue() {
+		$this ->findJoinedAllClientForTopMenue();
+		return $this->db->count_all_results();
+	}
+	
+// 	/**
+// 	 *
+// 	 */
+// 	public function findAllListForTopMenue() {
+// 		$this ->findJoinedAllClientForTopMenue();
+		
+// 		$ret = $this->db->get();
+		
+// 		if(!$ret) {
+// 			exit($this->db->erroinfo());
+// 		}
+		
+// 		return $ret->result_object();
+// 	}
+	
+	/**
+	 * @param unknown_type $num
+	 * @param unknown_type $offset
+	 */
+	public function findLimitAllListForTopMenue($num ,$offset = 0) {
+		$this ->findJoinedAllClientForTopMenue();
+		$this->db->limit($num ,$offset);
+		
+		$ret = $this->db->get();
+		
+		if(!$ret) {
+			exit($this->db->erroinfo());
+		}
+		
+		return $ret->result_object();
+	}
 }

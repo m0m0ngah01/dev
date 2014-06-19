@@ -9,7 +9,7 @@ class Top extends CI_Controller {
 	/**
 	 * @var unknown_type
 	 */
-	private $viewparams_ = array('sidebar' => array() , 'main' => array() );
+	private $viewparams_ = [];
 
 
 	/**
@@ -20,9 +20,29 @@ class Top extends CI_Controller {
 
 		$this->Debug('start top');
 
+		// loading
 		$this->load->model('db/Client_model' ,'cl');
 		$this->load->model('db/Project_model' ,'pr');
 		$this->load->library('pagination');
+
+		// initializing
+		$this->init();
+	}
+
+
+	/**
+	 *
+	 */
+	private function init() {
+		// set params
+		$this->setViewParams('header' ,array('base_url' => base_url()));
+		$this->setViewParams('footer' ,array('base_url' => base_url()));
+
+		// collect client list
+		$cl_list = $this->cl->getClientListJoinedProject();
+		$cl_tree = $this -> makeProLi($cl_list);
+		$this->setViewParams('sidebar', array('cl_tree' => $cl_tree,));
+
 	}
 
 
@@ -35,10 +55,11 @@ class Top extends CI_Controller {
 		if(array_key_exists($key, $this->viewparams_)) {
 			$this->viewparams_[$key] += $data ;
 		} else {
-			$this->viewparams_ += $data ;
+			$this->viewparams_ += array($key =>$data);;
 		}
 	}
-	
+
+
 
 	/**
 	 * Index Page for this controller.
@@ -57,32 +78,37 @@ class Top extends CI_Controller {
 	 */
 	public function index()
 	{
-		// collect client list
-		$cl_list = $this->cl->getClientListJoinedProject();
-		$cl_tree = $this -> makeProLi($cl_list);
-		$this->setViewParams('sidebar', array('cl_tree' => $cl_tree,));
-
-		// collect prfile list
-		$pr_list = $this->pr->getAllListForTopMenue();
-		$this->setViewParams('main', array('pr_list' => $pr_list,));
-		
-		$total_rows = $this->pr->getTotalRowsForTopMenue();
-		
-		// setting pagenation
-		$config['base_url'] = 'http://192.168.10.77/mngtool/top';
-		$config['total_rows'] = $total_rows;
-		$config['per_page'] = 1;
-
-		// 		var_dump($main);
-		$this->pagination->initialize($config);
-		
-		$this->setViewParams('main', array('pagination' => $this->pagination->create_links()));
-		
-		
-		
-		$this->show();
+		$this->test(0);
 	}
 
+	public function test($_offset_ = 0) {
+		$ROWS_PER_PAGE = 5;
+		$offset        = 0;
+		$total_rows    = $this->pr->findTotalRowsForTopMenue();
+
+		if(is_numeric($_offset_)
+				&& $offset <= ($total_rows/$ROWS_PER_PAGE)) {
+
+			$offset = $_offset_;
+		}
+
+		$pr_list = $this->pr->findLimitAllListForTopMenue($ROWS_PER_PAGE ,$offset);
+		$this->setViewParams('main', array('pr_list' => $pr_list,));
+
+		// setting pagenation
+		$config['base_url']         = 'http://192.168.10.77/mngtool/top/test/';
+		$config['total_rows']       = $total_rows;
+		$config['per_page']         = $ROWS_PER_PAGE;
+		$config['use_page_numbers'] = TRUE;
+// 		$config['first_link']       = '';
+		$this->pagination->initialize($config);
+
+		$this->setViewParams('main', array('pagination' => $this->pagination->create_links()));
+
+		// 		var_dump($main);
+		$this->show();
+		
+	}
 
 	/**
 	 * @param unknown_type $list
@@ -174,10 +200,10 @@ class Top extends CI_Controller {
 		$this->load->library('parser');
 
 		$parts = array(
-				"header" => $this->load->view('template/vw_header'),
-				"sidebar" => $this->parser->parse('template/vw_sidebar',$this->viewparams_['sidebar']),
-				"main" => $this->parser->parse('container/vw_top', $this->viewparams_['main']),// set params
-				"footer" => $this->load->view('template/vw_footer')
+				"header"  => $this->parser->parse('template/vw_header'  ,$this->viewparams_['header']),
+				"sidebar" => $this->parser->parse('template/vw_sidebar' ,$this->viewparams_['sidebar']),
+				"main"    => $this->parser->parse('container/vw_top'    ,$this->viewparams_['main']),// set params
+				"footer"  => $this->parser->parse('template/vw_footer'  ,$this->viewparams_['footer'])
 		);
 
 		$this->load->view('layout',$parts,TRUE);

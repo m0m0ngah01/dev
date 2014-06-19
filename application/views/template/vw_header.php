@@ -5,23 +5,23 @@
         <title>AdminLTE | Dashboard</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
-        <link href="adminLTE/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="{base_url}adminLTE/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <!-- font Awesome -->
-        <link href="adminLTE/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="{base_url}adminLTE/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <!-- Ionicons -->
-        <link href="adminLTE/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+        <link href="{base_url}adminLTE/css/ionicons.min.css" rel="stylesheet" type="text/css" />
         <!-- Morris chart -->
-        <link href="adminLTE/css/morris/morris.css" rel="stylesheet" type="text/css" />
+        <link href="{base_url}adminLTE/css/morris/morris.css" rel="stylesheet" type="text/css" />
         <!-- jvectormap -->
-        <link href="adminLTE/css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+        <link href="{base_url}adminLTE/css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
         <!-- fullCalendar -->
-        <link href="adminLTE/css/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />
+        <link href="{base_url}adminLTE/css/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />
         <!-- Daterange picker -->
-        <link href="adminLTE/css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+        <link href="{base_url}adminLTE/css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
         <!-- bootstrap wysihtml5 - text editor -->
-        <link href="adminLTE/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
+        <link href="{base_url}adminLTE/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
         <!-- Theme style -->
-        <link href="adminLTE/css/AdminLTE.css" rel="stylesheet" type="text/css" />
+        <link href="{base_url}adminLTE/css/AdminLTE.css" rel="stylesheet" type="text/css" />
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -62,7 +62,7 @@
                                         <li><!-- start message -->
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="adminLTE/img/avatar3.png" class="img-circle" alt="User Image"/>
+                                                    <img src="{base_url}adminLTE/img/avatar3.png" class="img-circle" alt="User Image"/>
                                                 </div>
                                                 <h4>
                                                     Support Team
@@ -74,7 +74,7 @@
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="adminLTE/img/avatar2.png" class="img-circle" alt="user image"/>
+                                                    <img src="{base_url}adminLTE/img/avatar2.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     AdminLTE Design Team
@@ -86,7 +86,7 @@
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="adminLTE/img/avatar.png" class="img-circle" alt="user image"/>
+                                                    <img src="{base_url}adminLTE/img/avatar.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     Developers
@@ -98,7 +98,7 @@
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="adminLTE/img/avatar2.png" class="img-circle" alt="user image"/>
+                                                    <img src="{base_url}adminLTE/img/avatar2.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     Sales Department
@@ -110,7 +110,7 @@
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="adminLTE/img/avatar.png" class="img-circle" alt="user image"/>
+                                                    <img src="{base_url}adminLTE/img/avatar.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     Reviewers
@@ -245,7 +245,7 @@
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
-                                    <img src="adminLTE/img/avatar3.png" class="img-circle" alt="User Image" />
+                                    <img src="{base_url}adminLTE/img/avatar3.png" class="img-circle" alt="User Image" />
                                     <p>
                                         Jane Doe - Web Developer
                                         <small>Member since Nov. 2012</small>
