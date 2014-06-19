@@ -60,7 +60,6 @@ class Top extends CI_Controller {
 	}
 
 
-
 	/**
 	 * Index Page for this controller.
 	 *
@@ -78,10 +77,14 @@ class Top extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->test(0);
+		$this->page(0);
 	}
+	
 
-	public function test($_offset_ = 0) {
+	/**
+	 * @param unknown_type $_offset_
+	 */
+	public function page($_offset_ = 0) {
 		$ROWS_PER_PAGE = 5;
 		$offset        = 0;
 		$total_rows    = $this->pr->findTotalRowsForTopMenue();
@@ -96,11 +99,15 @@ class Top extends CI_Controller {
 		$this->setViewParams('main', array('pr_list' => $pr_list,));
 
 		// setting pagenation
-		$config['base_url']         = 'http://192.168.10.77/mngtool/top/test/';
+		$config['base_url']         = base_url() .'top/page/';
 		$config['total_rows']       = $total_rows;
 		$config['per_page']         = $ROWS_PER_PAGE;
 		$config['use_page_numbers'] = TRUE;
-// 		$config['first_link']       = '';
+		$config['first_link']       = '<button class="btn btn-xs btn-primary"><i class="fa fa-backward"></i></button>';
+		$config['prev_link']       = '<button class="btn btn-xs btn-primary"><i class="fa fa-caret-left"></i></button>';
+		$config['next_link']       = '<button class="btn btn-xs btn-primary"><i class="fa fa-caret-right"></i></button>';
+		$config['last_link']       = '<button class="btn btn-xs btn-primary"><i class="fa fa-forward"></i></button>';
+		
 		$this->pagination->initialize($config);
 
 		$this->setViewParams('main', array('pagination' => $this->pagination->create_links()));
@@ -110,6 +117,7 @@ class Top extends CI_Controller {
 		
 	}
 
+	
 	/**
 	 * @param unknown_type $list
 	 * @return unknown|Ambigous <multitype:, string>
@@ -171,6 +179,7 @@ class Top extends CI_Controller {
 		return $temp;
 	}
 
+	
 	/**
 	 * @param unknown_type $pro
 	 * @return string
@@ -190,6 +199,7 @@ class Top extends CI_Controller {
 		return $li;
 	}
 
+	
 	/**
 	 * @param unknown_type $data
 	 *
@@ -209,6 +219,7 @@ class Top extends CI_Controller {
 		$this->load->view('layout',$parts,TRUE);
 	}
 
+	
 	/**
 	 * @param unknown_type $data
 	 */
