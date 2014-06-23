@@ -65,7 +65,7 @@
 */
 
 //$autoload['helper'] = array();
-$autoload['helper'] = array('url');
+$autoload['helper'] = array('url','sidebar');
 
 /*
 | -------------------------------------------------------------------
