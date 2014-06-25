@@ -11,130 +11,144 @@
 
 		<div class="row">
 			<div class="col-xs-12">
-				<div class="box box-solid">
+
+				<div class="box box-success ">
+					<div class="box-header">
+						<i class="fa fa-inbox"></i>
+						<h3 class="box-title">Sub Profile</h3>
+					</div>
+
+					<!-- profile header -->
 					<div class="box-body">
-						<div class="row">
+						<div class="table-responsive">
+							<table id="subprofile_top" class="table">
+								<thead></thead>
+								<tbody>
+									<tr>
+										<th>担当者</th>
+										<td colspan="3">{pr_owner}</td>
+									</tr>
+									<tr>
+										<th>Sub プロファイル名</th>
+										<td><a href="<= base_url() =>/sub/{pr_id}">{pr_name}</a>
+										</td>
 
-							<!-- 検索画面の挿入 -->
-							<div class="col-md-3 col-sm-4">
-								<div class="box-header">
-									<i class="fa fa-inbox"></i>
-									<h3 class="box-title">Client</h3>
-								</div>
-
-								<!-- Navigation - folders-->
-								<div class=".pre-scrollable" style="margin-top: 15px;">
-									<section class="sidebar">
-										<!-- sidebar menu: : style can be found in sidebar.less -->
-										<ul class="sidebar-menu">
-											{vul_list}
-											<li class="treeview"><a href="#">
-													<span>{name}</span> <i class="fa fa-angle-left pull-right"></i>
-												</a>
-												<ul class="treeview-menu">
-													<li><a href="top">
-															<span>{vul_name}</span> <i class="fa fa-angle-left pull-right"></i>
-														</a>
-													</li>
-												</ul>
-											</li> {/vul_list}
-										</ul>
-									</section>
-								</div>
-							</div>
-
-
-							<div class="col-md-9 col-sm-8">
-								<!-- /.row -->
-
-								<div class="table-responsive">
-									<!-- THE MESSAGES -->
-									<table class="table">
-										<thead>
-											<tr>
-												<th rowspan="2">No.</th>
-												<th nowrap rowspan="2">診断ID</th>
-												<th nowrap rowspan="2">診断名</th>
-												<th nowrap class="status_th" rowspan="2">ステータス</th>
-												<th rowspan="2">診断</th>
-												<th class="t15" nowrap rowspan="2">オープン<br />ポート
-												</th>
-												<th colspan="7">検出件数</th>
-											</tr>
-											<tr>
-												<td class="level_e">緊急</td>
-												<td class="level_c">重大</td>
-												<td class="level_h">高</td>
-												<td class="level_m">中</td>
-												<td class="level_l">低</td>
-												<td class="level_i">情報</td>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<th>1</th>
-												<td class="center ids">5204</td>
-												<td title="http://stg.kurihaku.jp/" nowrap><a href="/vulnerability_list/5204" title="TW201306M002.トランスコスモス">TW201306M002.トランスコスモス</a>
-												</td>
-												<td nowrap class="center status_td"><input type="hidden" id="status_id5204" value="27"></input> <span class="status_ja5204">終了</span>
-												</td>
-												<td nowrap class="audit_time"><a href="/vulnerability_list/5204" title="診断結果詳細へ">
-														開始&nbsp;2014/05/30 (金) 01:20:05<br /> 終了&nbsp;2014/05/30 (金) 01:20:26
-													</a>
-												</td>
-												<td class="center">-</td>
-												<td class="center">0</td>
-												<td class="center">0</td>
-												<td class="center">0</td>
-												<td class="center">0</td>
-												<td class="center">0</td>
-												<td class="center">0</td>
-											</tr>
-											<tr>
-												<th>2</th>
-												<td class="center ids">5203</td>
-												<td titel="http://stg1.dsp.co.jp/" nowrap><a href="/vulnerability_list/5203" title="TW201306M002.トランスコスモス">TW201306M002.トランスコスモス</a>
-												</td>
-												<td nowrap class="center status_td"><input type="hidden" id="status_id5203" value="27"></input> <span class="status_ja5203"> 終了 </span>
-												</td>
-												<td nowrap class="audit_time"><a href="/vulnerability_list/5203" title="診断結果詳細へ">
-														開始&nbsp;2014/05/30 (金) 01:10:03<br /> 終了&nbsp;2014/05/30 (金) 01:10:24
-													</a>
-												</td>
-												<td class="center">-</td>
-												<td class="center">0</td>
-												<td class="center">0</td>
-												<td class="center">0</td>
-												<td class="center">0</td>
-												<td class="center">0</td>
-												<td class="center">0</td>
-											</tr>
-										
-										</tbody>
-									</table>
-
-								</div>
-								<!-- /.table-responsive -->
-							</div>
-							<!-- /.col (RIGHT) -->
-						</div>
-						<!-- /.row -->
-					</div>
-					<!-- /.box-body -->
-					<div class="box-footer clearfix">
-						<div class="pull-right">
-							<small>Showing 1-12/1,240</small>
-							<button class="btn btn-xs btn-primary">
-								<i class="fa fa-caret-left"></i>
-							</button>
-							<button class="btn btn-xs btn-primary">
-								<i class="fa fa-caret-right"></i>
-							</button>
+										<td class="setting_info_btn center"><a href="/profile_edit/{pr_id}">編集</a>
+										</td>
+										<td class="setting_info_btn center"><a href="/profile_del_conf/{pr_id}">削除</a>
+										</td>
+									</tr>
+									{pr_urls}
+									<tr>
+										<th>URL</th>
+										<td colspan="3">{url}</td>
+									</tr>
+									{/pr_urls}
+								</tbody>
+								<tfoot></tfoot>
+							</table>
 						</div>
 					</div>
-					<!-- box-footer -->
 				</div>
-				<!-- /.box -->
+				<!-- /.profile header -->
+
+				<!-- exec config -->
+				<div class="box box-success ">
+					<div class="box-header">
+						<i class="fa fa-inbox"></i>
+						<h3 class="box-title">診断</h3>
+					</div>
+
+					<div class="box-body">
+						<div class="btn-group btn-group-justified">
+
+							<!-- ログイン設定 -->
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									ログイン設定 </span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a href="javascript:void(0);" onclick="javascript:setActionTarget('form_dummy', '/login_setting_basic_parameter_input');" /><span>ベーシック認証設定</span>
+										</a></li>
+									<li><a href="javascript:void(0);" onclick="javascript:setActionTarget('form_dummy', '/login_setting_url_input');" /><span>フォーム認証設定</span> </a>
+									</li>
+								</ul>
+							</div>
+							<!-- /.ログイン設定 -->
+
+							<!-- クローリング設定 -->
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									クローリング設定 </span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a href="javascript:void(0);" onclick="javascript:setActionTarget('form_dummy', '/target_url_select');" /><span>手動アップロード</span> </a>
+									</li>
+									<li><a href="javascript:void(0);" onclick="javascript:setActionTarget('form_dummy', '/target_url_tree');" /><span>ツリークローリング</span> </a>
+									</li>
+									<li><a class="exclude_mask" href="javascript:void(0);"
+											onclick="return conformDialogWithForm('form_dummy', '/crawling_auto','自動クローリングを開始してもよろしいですか？。',false);">自動クローリング</a></li>
+								</ul>
+							</div>
+							<!-- /.クローリング設定 -->
+
+							<!-- 診断 -->
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									診断 </span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a class="audit_start_link exclude_mask" href="javascript:void(0);"
+											onclick="var retval=check_group_license(1222);if(retval) return conformDialogWithForm('form_dummy', '/audit_start','グループライセンスを使用します。開始してもよろしいですか？',false); else return conformDialogWithForm('form_dummy', '/audit_start','診断開始してもよろしいですか?',false);">スキャン開始</a>
+									</li>
+
+									<li><a href="javascript:void(0);" onclick="javascript:setActionTarget('form_dummy','/csrf_audit');">
+											<span>CSRF診断</span>
+										</a></li>
+								</ul>
+							</div>
+							<!-- /.診断 -->
+
+							<!-- オプション設定 -->
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									オプション設定 </span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a href="javascript:void(0);" onclick="javascript:setActionTarget('form_dummy', '/target_url_select');" /><span>対象URL確認・選択</span> </a></li>
+									<li><a href="javascript:void(0);" onclick="javascript:setActionTarget('form_dummy', '/category_select');" /><span>診断カテゴリ設定</span> </a></li>
+									<li class="rightlink"><a href="javascript:void(0);" onclick="javascript:setActionTarget('form_dummy', '/audit_config_edit/1220');" /><span>オプション設定</span>
+										</a></li>
+									<li><a href="javascript:void(0);" onclick="javascript:setActionTarget('form_dummy', '/schedule_list/1222');" /><span>スケジュール設定</span> </a></li>
+									<li><a href="javascript:void(0);" onclick="javascript:setActionTarget('form_dummy', '/sendmail_list/1222');" /><span>メール送信設定</span> </a></li>
+									<li class="rightlink"><a href="javascript:void(0);" onclick="javascript:setActionTarget('form_dummy', '/crawling_url_input');" /><span>アクセス除外・追加設定</span>
+										</a></li>
+								</ul>
+							</div>
+							<!-- /.オプション設定 -->
+
+						</div>
+					</div>
+
+				</div>
+				<!-- /. exec config -->
+
+				
+				<!-- vuls info -->
+				<div class="box box-success ">
+					<div class="box-header">
+						<i class="fa fa-inbox"></i>
+						<h3 class="box-title">診断結果一覧</h3>
+					</div>
+
+					<div class="box-body">
+					
+					</div>
+
+				</div>
+				<!-- /.vuls info -->
+				
+				
 			</div>
 			<!-- /.col (MAIN) -->
 		</div>

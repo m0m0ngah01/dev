@@ -86,9 +86,9 @@
 									<tbody>
 										{sub_list}
 										<tr class=" " title="sub_id={sub_id}">
-											<td><a href="javascript:setActionTarget('form_subprofile_list', '/history_list/{sub_id}');">診断結果</a>
+											<td><a href="javascript:setActionTarget('form_sub_list', '/sub_history/{sub_id}');">診断結果</a>
 											</td>
-											<td><a href="javascript:setActionTarget('form_subprofile_list', '/subprofile_top/{sub_id}');">{sub_name}</a>
+											<td><a href="javascript:setActionTarget('form_sub_list', '/sub/{sub_id}');">{sub_name}</a>
 											</td>
 											<td class="center">緊急停止</td>
 											<td class="center"></td>

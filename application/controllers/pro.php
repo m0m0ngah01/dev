@@ -12,7 +12,7 @@ class Pro extends CI_Controller {
 	private $viewparams_ = [];
 
 
-	private $pro_id_;
+	private $sub_id_;
 	
 	/**
 	 *
@@ -88,10 +88,10 @@ class Pro extends CI_Controller {
 // 	public function sub_list($pro_id = NULL) {
 	public function sub_list($pro_id = NULL ,$_offset_ = 0) {
 		
-		$_SESSION['pro_id'] = "20131219PR1279";
-		$this->pro_id_ = "20131219PR1279";
+		$pro_id = "20131219PR1279";
+		$_SESSION['pro_id'] = $pro_id;
+		$this->pro_id_ = $pro_id;
 		
-
 		if(!is_null($pro_id) ) {
 			
 			// valid
