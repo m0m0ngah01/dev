@@ -25,10 +25,6 @@
 								<thead></thead>
 								<tbody>
 									<tr>
-										<th>担当者</th>
-										<td colspan="3">{pr_owner}</td>
-									</tr>
-									<tr>
 										<th>Sub プロファイル名</th>
 										<td><a href="<= base_url() =>/sub/{pr_id}">{pr_name}</a>
 										</td>
@@ -38,6 +34,11 @@
 										<td class="setting_info_btn center"><a href="/profile_del_conf/{pr_id}">削除</a>
 										</td>
 									</tr>
+									<tr>
+										<th>診断担当</th>
+										<td colspan="3">{sub_owner}</td>
+									</tr>
+
 									{pr_urls}
 									<tr>
 										<th>URL</th>
@@ -60,6 +61,8 @@
 					</div>
 
 					<div class="box-body">
+
+						<!-- btn-group-justified -->
 						<div class="btn-group btn-group-justified">
 
 							<!-- ログイン設定 -->
@@ -128,30 +131,100 @@
 							<!-- /.オプション設定 -->
 
 						</div>
+						<!-- /.btn-group-justified -->
+					</div>
+					<!-- /.box-body -->
+
+					<div class="box-body">
+
+						<!-- btn-group-justified -->
+						<div class="btn-group btn-group-justified">
+
+							<!-- データアップロード -->
+							<div class="btn-group">
+<!-- 								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> -->
+<!-- 									データアップロード </span> -->
+<!-- 								</button> -->
+								
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="modal" data-target="#myModal">
+									データアップロード </span>
+								</button>
+								
+								
+<!--  								<ul class="dropdown-menu"> -->
+<!--									<li><a href="javascript:void(0);" onclick="javascript:setActionTarget('form_dummy', '/target_url_select');" /><span>手動アップロード</span> </a>
+  									</li> -->
+<!--									<li><a href="javascript:void(0);" onclick="javascript:setActionTarget('form_dummy', '/target_url_tree');" /><span>ツリークローリング</span> </a>
+  									</li> -->
+<!--  									<li><a class="exclude_mask" href="javascript:void(0);" -->
+<!-- 											onclick="return conformDialogWithForm('form_dummy', '/crawling_auto','自動クローリングを開始してもよろしいですか？。',false);">自動クローリング</a></li> -->
+<!--  								</ul> -->
+							</div>
+							<!-- /.データアップロード -->
+
+
+<!-- 							<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Launch demo modal</button> -->
+						</div>
+						<!-- /.btn-group-justified -->
+
 					</div>
 
 				</div>
 				<!-- /. exec config -->
 
-				
+
 				<!-- vuls info -->
 				<div class="box box-success ">
 					<div class="box-header">
 						<i class="fa fa-inbox"></i>
-						<h3 class="box-title">診断結果一覧</h3>
+						<h3 class="box-title">診断結果</h3>
 					</div>
 
-					<div class="box-body">
-					
-					</div>
+					<div class="box-body"></div>
 
 				</div>
 				<!-- /.vuls info -->
-				
-				
+
 			</div>
 			<!-- /.col (MAIN) -->
+
 		</div>
 	</section>
 	<!-- /.content -->
+
+	<!-- modal  -->
+	<script>
+
+	$(document).ready(function(){ 
+		
+		$('#myModal').on('show.bs.modal', function (e) {
+			  if (!data) return e.preventDefault(); // stops modal from being shown
+		}); 
+		
+		$('#myModal').modal();                      // initialized with defaults
+		$('#myModal').modal({ keyboard: false });   // initialized with no keyboard
+		$('#myModal').modal('show');
+	}
+	</script>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				</div>
+				<div class="modal-body">
+				
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.modal -->
+
 </aside>
