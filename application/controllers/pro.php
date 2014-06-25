@@ -12,6 +12,8 @@ class Pro extends CI_Controller {
 	private $viewparams_ = [];
 
 
+	private $pro_id_;
+	
 	/**
 	 *
 	 */
@@ -23,6 +25,7 @@ class Pro extends CI_Controller {
 		// loading
 		$this->load->model('db/Client_model' ,'cl');
 		$this->load->model('db/Project_model' ,'pr');
+		$this->load->model('db/Project_detail_model' ,'pd');
 		$this->load->library('pagination');
 
 		// initializing
@@ -39,7 +42,7 @@ class Pro extends CI_Controller {
 		$this->setViewParams('footer' ,array('base_url' => base_url()));
 
 		// collect client list
-		$list = $this->cl->getClientListJoinedProject();
+		$list = $this->cl->findAllListJoinedProject();
 		$this->setViewParams('sidebar', array('cl_tree' => create_clinet_tree($list),));
 	}
 
@@ -75,45 +78,82 @@ class Pro extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->page(0);
-		
-		
-		$cl_dummy_info = array(
-				'cl_name' => "TW"
-				,'pr_name' => "TW20140623.sinndann"
-				,'pr_name' => "TW20140623.sinndann"
-				,'pr_urls' => array(
-						array('url' => "http://192.168.10.77/mngtool/cl")
-						,array('url' => "http://192.168.10.77/mngtool/cl")
-						,array('url' => "http://192.168.10.77/mngtool/cl")
-						,array('url' => "http://192.168.10.77/mngtool/cl")
-						,array('url' => "http://192.168.10.77/mngtool/cl")
-						,array('url' => "http://192.168.10.77/mngtool/cl")
-				)
-		);
-		
+		$this->sub_list();
 	}
-	
 
+
+	/**
+	 * @param unknown_type $pro_id
+	 */
+// 	public function sub_list($pro_id = NULL) {
+	public function sub_list($pro_id = NULL ,$_offset_ = 0) {
+		
+		$_SESSION['pro_id'] = "20131219PR1279";
+		$this->pro_id_ = "20131219PR1279";
+		
+
+		if(!is_null($pro_id) ) {
+			
+			// valid
+			$pro_id_ses = $this->getSessionID('pro_id');
+			
+			if($pro_id !== $pro_id_ses) {
+				$pro_id ="20131219PR1279";
+			}
+
+			$db_info = $this->pr->findById($pro_id);
+			
+			$pro_info = array(
+					 'pr_owner' => $db_info ->owner
+					,'pr_name' => $db_info ->name
+					,'url' => $db_info ->url
+			);
+		} else {
+
+			$pro_dummy_info = array(
+					 'pr_owner' => "TW"
+					,'pr_name'  => "TW20140623.sinndann"
+					,'pr_urls'  =>  array(
+							array('url' => "http://192.168.10.77/mngtool/cl")
+							,array('url' => "http://192.168.10.77/mngtool/cl")
+							,array('url' => "http://192.168.10.77/mngtool/cl")
+							,array('url' => "http://192.168.10.77/mngtool/cl")
+							,array('url' => "http://192.168.10.77/mngtool/cl")
+							,array('url' => "http://192.168.10.77/mngtool/cl")
+					)
+			);
+
+			$pro_info = $pro_dummy_info;
+		}
+
+		$this->setViewParams('main', $pro_info);
+		
+		$this->	set_sub_list($pro_id,$_offset_);
+		
+		$this->show();
+	}
+
+	
 	/**
 	 * @param unknown_type $_offset_
 	 */
-	public function page($_offset_ = 0) {
+	private function set_sub_list($pro_id ,$_offset_ = 0) {
+		
 		$ROWS_PER_PAGE = 5;
 		$offset        = 0;
-		$total_rows    = $this->pr->findTotalRowsForTopMenue();
-
+		$total_rows    = $this->pd->countRowsJoinedProjectByProjectId($pro_id);
+	
 		if(is_numeric($_offset_)
-				&& $offset <= ($total_rows/$ROWS_PER_PAGE)) {
-
+				&& $_offset_ <= ($total_rows/$ROWS_PER_PAGE)) {
+	
 			$offset = $_offset_;
 		}
-
-		$pr_list = $this->pr->findLimitAllListForTopMenue($ROWS_PER_PAGE ,$offset);
-		$this->setViewParams('main', array('pr_list' => $pr_list,));
-
+	
+		$sub_list = $this->pd->findLimitJoinedProjectWithOffset($pro_id ,$ROWS_PER_PAGE ,$offset);
+		$this->setViewParams('main', array('sub_list' => $sub_list,));
+	
 		// setting pagenation
-		$config['base_url']         = base_url() .'top/page/';
+		$config['base_url']         = base_url() .'pro/page/';
 		$config['total_rows']       = $total_rows;
 		$config['per_page']         = $ROWS_PER_PAGE;
 		$config['use_page_numbers'] = TRUE;
@@ -121,16 +161,15 @@ class Pro extends CI_Controller {
 		$config['prev_link']       = '<button class="btn btn-xs btn-primary"><i class="fa fa-caret-left"></i></button>';
 		$config['next_link']       = '<button class="btn btn-xs btn-primary"><i class="fa fa-caret-right"></i></button>';
 		$config['last_link']       = '<button class="btn btn-xs btn-primary"><i class="fa fa-forward"></i></button>';
-		
-		$this->pagination->initialize($config);
-
-		$this->setViewParams('main', array('pagination' => $this->pagination->create_links()));
-
-		// 		var_dump($main);
-		$this->show();
-	}
-
 	
+		$this->pagination->initialize($config);
+	
+		$this->setViewParams('main', array('pagination' => $this->pagination->create_links()));
+		
+	}
+	
+	
+
 	/**
 	 * @param unknown_type $data
 	 *
@@ -143,7 +182,8 @@ class Pro extends CI_Controller {
 		$parts = array(
 				"header"  => $this->parser->parse('template/vw_header'  ,$this->viewparams_['header']),
 				"sidebar" => $this->parser->parse('template/vw_sidebar' ,$this->viewparams_['sidebar']),
-				"main" => $this->load->view('container/vw_profile'),
+				//"main" => $this->load->view('container/vw_profile'),
+				"main"    => $this->parser->parse('container/vw_profile',$this->viewparams_['main']),
 				"footer"  => $this->parser->parse('template/vw_footer'  ,$this->viewparams_['footer'])
 		);
 
@@ -151,6 +191,11 @@ class Pro extends CI_Controller {
 	}
 
 	
+	private function getSessionID($key) {
+		return $_SESSION[$key];
+	}
+	
+
 	/**
 	 * @param unknown_type $data
 	 */

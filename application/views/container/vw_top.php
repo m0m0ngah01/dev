@@ -48,7 +48,7 @@
 										{pr_list}
 										<tr>
 											<th>1</th>
-											<td title="{pr_url}" nowrap><a href="/vulnerability_list/{p_id}" title="{p_name}">{p_name}</a>
+											<td title="{pr_url}" nowrap><a href="pro/{p_id}" title="{p_name}">{p_name}</a>
 											</td>
 											<td nowrap class="audit_time"><a href="/vulnerability_list/{p_id}" title="診断結果詳細へ">
 													予定開始&nbsp;{pre_start_date}&emsp;開始&nbsp;{start_date} <br /> 予定終了&nbsp;{pre_end_date}&emsp;終了&nbsp;{end_date}
@@ -74,13 +74,14 @@
 						<!-- /.row -->
 					</div>
 					<!-- /.box-body -->
+					<!--  box-footer pagination -->
 					<div class="box-footer clearfix">
 						<div class="pull-right">
 							{pagination}
 							<!-- 							<small>Showing 1-12/1,240</small> -->
 						</div>
 					</div>
-					<!-- box-footer -->
+					<!-- /.box-footer pagination -->
 				</div>
 				<!-- /.box -->
 			</div>

@@ -13,6 +13,39 @@ class Project_model extends MY_Model {
 		parent::__construct();
 	}
 
+	
+	/**
+	 * @param unknown_type $id
+	 */
+	public function findById($id) {
+		$this->db->select('
+				 pr.project_id as pr_id
+				,pr.project_name as name
+				,pr.pre_start_date as pre_start
+				,pr.pre_end_date as pre_end
+				,pr.start_date as start
+				,pr.end_date as end
+				,pr.owner as owner
+				,"http://www.google.com" as url '  //TODO modify me
+		);
+		//
+		$this->db->from('project pr');
+		$this->db->where( array('pr.project_id =' => $id ));
+	
+		$ret = $this->db->get();
+	
+		if(!$ret) {
+			exit($this->db->erroinfo());
+		}
+	
+		if($ret ->num_rows() !== 1 ) {
+			exit($this->db->erroinfo());
+		}
+	
+		return $ret->first_row();
+	}
+	
+	
 	/**
 	 * 
 	 */
@@ -31,37 +64,17 @@ class Project_model extends MY_Model {
 		$this->db->from('project pj');
 		$this->db->join('project_status ps', 'pj.status = ps.code' ,'left');
 
-// 		$ret = $this->db->get();
-		
-// 		if(!$ret) {
-// 			exit($this->db->erroinfo());
-// 		}
-// 		return $ret;
 	}
 	
 	/**
 	 *
 	 */
-	public function findTotalRowsForTopMenue() {
+	public function countRowsJoinedClientForTopMenue() {
 		$this ->findJoinedAllClientForTopMenue();
 		return $this->db->count_all_results();
 	}
 	
-// 	/**
-// 	 *
-// 	 */
-// 	public function findAllListForTopMenue() {
-// 		$this ->findJoinedAllClientForTopMenue();
-		
-// 		$ret = $this->db->get();
-		
-// 		if(!$ret) {
-// 			exit($this->db->erroinfo());
-// 		}
-		
-// 		return $ret->result_object();
-// 	}
-	
+
 	/**
 	 * @param unknown_type $num
 	 * @param unknown_type $offset

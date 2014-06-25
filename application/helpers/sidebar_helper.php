@@ -91,7 +91,7 @@ if ( ! function_exists('set_profile_list'))
 	 */
 	function set_profile_list($pro) {
 
-		$li = '<li><a href="top/{p_id}"><span>{p_name}</span> <i class="fa fa-angle-left pull-right"></i></a></li>' ;
+		$li = '<li><a href="pro/{p_id}"><span>{p_name}</span> <i class="fa fa-angle-left pull-right"></i></a></li>' ;
 
 		if(array_key_exists('p_name', $pro)) {
 			$li = str_replace('{p_name}',  $pro['p_name'] , $li);
@@ -104,7 +104,6 @@ if ( ! function_exists('set_profile_list'))
 		return $li;
 	}
 }
-
 
 
 /* End of file form_helper.php */

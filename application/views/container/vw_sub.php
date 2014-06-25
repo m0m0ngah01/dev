@@ -3,7 +3,7 @@
 <aside class="right-side">
 	<!-- Content Header (Page header) -->
 	<section class="content-header no-margin">
-		<h1 class="text-center">Project Management</h1>
+		<h1 class="text-center">Sub Profile Page</h1>
 	</section>
 
 	<!-- Main content -->
@@ -27,17 +27,17 @@
 									<section class="sidebar">
 										<!-- sidebar menu: : style can be found in sidebar.less -->
 										<ul class="sidebar-menu">
-											{comp_tree}
+											{vul_list}
 											<li class="treeview"><a href="#">
 													<span>{name}</span> <i class="fa fa-angle-left pull-right"></i>
 												</a>
 												<ul class="treeview-menu">
 													<li><a href="top">
-															<span>{p_name}</span> <i class="fa fa-angle-left pull-right"></i>
+															<span>{vul_name}</span> <i class="fa fa-angle-left pull-right"></i>
 														</a>
 													</li>
 												</ul>
-											</li> {/comp_tree}
+											</li> {/vul_list}
 										</ul>
 									</section>
 								</div>

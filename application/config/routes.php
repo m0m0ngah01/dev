@@ -43,5 +43,12 @@
 $route['404_override'] = '';
 
 
+#20140625 add 
+#$route['pro/:num'] = 'pro/prolist/' ;
+$route['cl/(:any)'] = 'cl/pro_list/$1' ;
+$route['pro/(:any)'] = 'pro/sub_list/$1' ;
+
+
+
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

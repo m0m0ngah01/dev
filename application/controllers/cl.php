@@ -74,6 +74,7 @@ class Cl extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+// 	public function index($cl_id = NULL) // TODO modified me
 	public function index()
 	{
 		$this->pro_list();
@@ -84,10 +85,24 @@ class Cl extends CI_Controller {
 	 * @param unknown_type $cl_id
 	 */
 	public function pro_list($cl_id = NULL) {
-		if(!is_null($cl_id) && is_numeric($cl_id)) {
-			$dummy_cl_id ="CL13120157";
-			$cl_id = $dummy_cl_id;
+// 		if(!is_null($cl_id) && is_numeric($cl_id)) {
 		
+		$_SESSION['cl_id'] = "CL13120157";
+		
+		if(!is_null($cl_id) ) {
+		
+			$dummy_cl_id ="";
+			
+			// valid
+			$cl_id_ses = $this->getSessionID('cl_id');
+			if($cl_id !== $cl_id_ses) { 
+				
+				$dummy_cl_id ="CL13120157";
+				
+			} 
+			
+			$cl_id = $dummy_cl_id;
+				
 			$cl_info = $this->cl->findById($cl_id);
 				
 			$cl_info = array(
@@ -123,6 +138,10 @@ class Cl extends CI_Controller {
 		$this->show();
 	}
 	
+	
+	private function getSessionID($key) {
+		return $_SESSION[$key];
+	}
 
 	/**
 	 * @param unknown_type $data

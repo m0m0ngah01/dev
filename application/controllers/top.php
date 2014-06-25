@@ -85,10 +85,10 @@ class Top extends CI_Controller {
 	public function page($_offset_ = 0) {
 		$ROWS_PER_PAGE = 5;
 		$offset        = 0;
-		$total_rows    = $this->pr->findTotalRowsForTopMenue();
+		$total_rows    = $this->pr->countRowsJoinedClientForTopMenue();
 
 		if(is_numeric($_offset_)
-				&& $offset <= ($total_rows/$ROWS_PER_PAGE)) {
+				&& $_offset_ <= ($total_rows/$ROWS_PER_PAGE)) {
 
 			$offset = $_offset_;
 		}

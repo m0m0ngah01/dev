@@ -88,7 +88,7 @@
 										{pr_list}
 										<tr>
 											<td>1</td>
-											<td><a href="pro/{pr_id};">{pr_name}</a>
+											<td><a href="../../pro/{pr_id};">{pr_name}</a>
 											</td>
 											<td class="center">{pr_status}</td>
 											<td class="center">{pre_start_date}</td>
