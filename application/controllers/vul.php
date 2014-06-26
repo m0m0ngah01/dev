@@ -4,7 +4,7 @@
  * @author user
  *
  */
-class Sub extends CI_Controller {
+class Vul extends CI_Controller {
 
 	/**
 	 * @var unknown_type
@@ -78,7 +78,7 @@ class Sub extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->sub_list();
+		$this->page();
 	}
 
 
@@ -86,7 +86,7 @@ class Sub extends CI_Controller {
 	 * @param unknown_type $pro_id
 	 */
 // 	public function sub_list($pro_id = NULL) {
-	public function sub_list($pro_id = NULL ,$_offset_ = 0) {
+	public function page($pro_id = NULL ,$_offset_ = 0) {
 		
 		$_SESSION['pro_id'] = "20131219PR1279";
 		$this->pro_id_ = "20131219PR1279";
@@ -144,7 +144,7 @@ class Sub extends CI_Controller {
 		$parts = array(
 				"header"  => $this->parser->parse('template/vw_header'  ,$this->viewparams_['header']),
 				"sidebar" => $this->parser->parse('template/vw_sidebar' ,$this->viewparams_['sidebar']),
-				"main"    => $this->parser->parse('container/vw_sub'    ,$this->viewparams_['main']),
+				"main"    => $this->parser->parse('container/vw_vul_list'    ,$this->viewparams_['main']),
 				"footer"  => $this->parser->parse('template/vw_footer'  ,$this->viewparams_['footer'])
 		);
 

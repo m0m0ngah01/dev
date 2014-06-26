@@ -20,20 +20,20 @@
 
 					<!-- profile header -->
 					<div class="box-body">
+
 						<div class="table-responsive">
-							<table id="subprofile_top" class="table">
+							<table class="table">
 								<thead></thead>
 								<tbody>
 									<tr>
 										<th>プロファイル名</th>
-										<td colspan="3" ><span>{pr_name}</span>
+										<td colspan="3"><a href="{base_url}/pro/{pr_id}">{pr_name}</a>
 										</td>
 									</tr>
 									<tr>
 										<th>Sub プロファイル名</th>
-										<td><a href="<= base_url() =>/sub/{pr_id}">{pr_name}</a>
+										<td><span>{sub_name}</span>
 										</td>
-
 										<td class="setting_info_btn center"><a href="/profile_edit/{pr_id}">編集</a>
 										</td>
 										<td class="setting_info_btn center"><a href="/profile_del_conf/{pr_id}">削除</a>
@@ -44,11 +44,12 @@
 										<td>{exec_date_start}</td>
 										<td colspan="2">{exec_date_end}</td>
 									</tr>
-									
+
 								</tbody>
 								<tfoot></tfoot>
 							</table>
 						</div>
+
 					</div>
 				</div>
 				<!-- /.profile header -->
@@ -152,10 +153,10 @@
 						<!-- btn-group-justified -->
 						<div class="btn-group btn-group-justified">
 
-						
+
 							<!-- 一覧表示 -->
 							<div class="btn-group">
-								<button type="button" class="btn btn-default " >
+								<button type="button" class="btn btn-default ">
 									一覧表示 </span>
 								</button>
 							</div>
@@ -168,8 +169,8 @@
 								</button>
 							</div>
 							<!-- /.ダウンロード -->
-							
-							
+
+
 							<!-- データアップロード -->
 							<div class="btn-group">
 								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="modal" data-target="#myModal">
@@ -177,14 +178,14 @@
 								</button>
 							</div>
 							<!-- /.データアップロード -->
-							
+
 
 							<!-- 							<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Launch demo modal</button> -->
 						</div>
 						<!-- /.btn-group-justified -->
 					</div>
 					<!-- /. box-body -->
-					
+
 				</div>
 				<!-- /.vuls info -->
 

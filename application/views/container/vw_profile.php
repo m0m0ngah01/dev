@@ -80,7 +80,7 @@
 										<th>診断手法</th>
 										<td colspan="3">{way}</td>
 									</tr>
-									
+
 									<tr>
 										<th>診断場所</th>
 										<td colspan="3">{location}</td>
@@ -95,7 +95,7 @@
 										<th>クライアント担当者</th>
 										<td colspan="3">{owner}</td>
 									</tr>
-									
+
 									<tr>
 										<th>総評</th>
 										<td colspan="3">{review}</td>
@@ -149,9 +149,8 @@
 									<tbody>
 										{sub_list}
 										<tr class=" " title="sub_id={sub_id}">
-											<td><a href="sub/{sub_id}">診断結果</a>
-											</td>
-											<td>{sub_name}</td>
+											<td>診断結果</td>
+											<td><a href="sub/{sub_id}">{sub_name}</a></td>
 											<td class="center">緊急停止</td>
 											<td class="center">&nbsp;</td>
 
@@ -171,6 +170,8 @@
 									</tbody>
 								</table>
 							</div>
+
+
 						</form>
 
 					</div>
