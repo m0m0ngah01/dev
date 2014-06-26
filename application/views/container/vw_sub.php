@@ -25,6 +25,11 @@
 								<thead></thead>
 								<tbody>
 									<tr>
+										<th>プロファイル名</th>
+										<td colspan="3" ><span>{pr_name}</span>
+										</td>
+									</tr>
+									<tr>
 										<th>Sub プロファイル名</th>
 										<td><a href="<= base_url() =>/sub/{pr_id}">{pr_name}</a>
 										</td>
@@ -35,16 +40,11 @@
 										</td>
 									</tr>
 									<tr>
-										<th>診断担当</th>
-										<td colspan="3">{sub_owner}</td>
+										<th>実施日</th>
+										<td>{exec_date_start}</td>
+										<td colspan="2">{exec_date_end}</td>
 									</tr>
-
-									{pr_urls}
-									<tr>
-										<th>URL</th>
-										<td colspan="3">{url}</td>
-									</tr>
-									{/pr_urls}
+									
 								</tbody>
 								<tfoot></tfoot>
 							</table>
@@ -135,40 +135,6 @@
 					</div>
 					<!-- /.box-body -->
 
-					<div class="box-body">
-
-						<!-- btn-group-justified -->
-						<div class="btn-group btn-group-justified">
-
-							<!-- データアップロード -->
-							<div class="btn-group">
-<!-- 								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> -->
-<!-- 									データアップロード </span> -->
-<!-- 								</button> -->
-								
-								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="modal" data-target="#myModal">
-									データアップロード </span>
-								</button>
-								
-								
-<!--  								<ul class="dropdown-menu"> -->
-<!--									<li><a href="javascript:void(0);" onclick="javascript:setActionTarget('form_dummy', '/target_url_select');" /><span>手動アップロード</span> </a>
-  									</li> -->
-<!--									<li><a href="javascript:void(0);" onclick="javascript:setActionTarget('form_dummy', '/target_url_tree');" /><span>ツリークローリング</span> </a>
-  									</li> -->
-<!--  									<li><a class="exclude_mask" href="javascript:void(0);" -->
-<!-- 											onclick="return conformDialogWithForm('form_dummy', '/crawling_auto','自動クローリングを開始してもよろしいですか？。',false);">自動クローリング</a></li> -->
-<!--  								</ul> -->
-							</div>
-							<!-- /.データアップロード -->
-
-
-<!-- 							<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Launch demo modal</button> -->
-						</div>
-						<!-- /.btn-group-justified -->
-
-					</div>
-
 				</div>
 				<!-- /. exec config -->
 
@@ -180,8 +146,45 @@
 						<h3 class="box-title">診断結果</h3>
 					</div>
 
-					<div class="box-body"></div>
+					<!-- box-body -->
+					<div class="box-body">
 
+						<!-- btn-group-justified -->
+						<div class="btn-group btn-group-justified">
+
+						
+							<!-- 一覧表示 -->
+							<div class="btn-group">
+								<button type="button" class="btn btn-default " >
+									一覧表示 </span>
+								</button>
+							</div>
+							<!-- /.一覧表示 -->
+
+							<!-- ダウンロード -->
+							<div class="btn-group">
+								<button type="button" class="btn btn-default ">
+									ダウンロード </span>
+								</button>
+							</div>
+							<!-- /.ダウンロード -->
+							
+							
+							<!-- データアップロード -->
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="modal" data-target="#myModal">
+									データアップロード </span>
+								</button>
+							</div>
+							<!-- /.データアップロード -->
+							
+
+							<!-- 							<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Launch demo modal</button> -->
+						</div>
+						<!-- /.btn-group-justified -->
+					</div>
+					<!-- /. box-body -->
+					
 				</div>
 				<!-- /.vuls info -->
 
@@ -215,9 +218,7 @@
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
 				</div>
-				<div class="modal-body">
-				
-				</div>
+				<div class="modal-body"></div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					<button type="button" class="btn btn-primary">Save changes</button>

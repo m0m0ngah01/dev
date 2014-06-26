@@ -25,12 +25,8 @@
 								<thead></thead>
 								<tbody>
 									<tr>
-										<th>担当者</th>
-										<td colspan="3">{pr_owner}</td>
-									</tr>
-									<tr>
 										<th>プロファイル名</th>
-										<td><a href="<= base_url() =>/sub/{pr_id}">{pr_name}</a>
+										<td><span>{pr_name}</span>
 										</td>
 
 										<td class="setting_info_btn center"><a href="/profile_edit/{pr_id}">編集</a>
@@ -38,12 +34,78 @@
 										<td class="setting_info_btn center"><a href="/profile_del_conf/{pr_id}">削除</a>
 										</td>
 									</tr>
-									{pr_urls}
+
 									<tr>
-										<th>URL</th>
-										<td colspan="3">{url}</td>
+										<th>診断期間（仮）</th>
+										<td>{pre_start}</td>
+										<td colspan="2">{pre_end}</td>
 									</tr>
-									{/pr_urls}
+
+									<tr>
+										<th>診断期間</th>
+										<td>{start}</td>
+										<td colspan="2">{end}</td>
+									</tr>
+
+									<tr>
+										<th>診断担当者</th>
+										<td colspan="3">{executor}</td>
+									</tr>
+
+									<tr>
+										<th>画面数</th>
+										<td colspan="3">{view_count}</td>
+									</tr>
+
+									<tr>
+										<th rowspan="{webs_count}">Webアプリケーション</th>
+									</tr>
+									{webs}
+									<tr>
+										<td colspan="3">{web}</td>
+									</tr>
+									{/webs}
+
+
+									<tr>
+										<th rowspan="{network_count}">ネットワーク</th>
+									</tr>
+									{network}
+									<tr>
+										<td colspan="3">{ip}</td>
+									</tr>
+									{/network}
+
+									<tr>
+										<th>診断手法</th>
+										<td colspan="3">{way}</td>
+									</tr>
+									
+									<tr>
+										<th>診断場所</th>
+										<td colspan="3">{location}</td>
+									</tr>
+
+									<tr>
+										<th>診断元IP</th>
+										<td colspan="3">{connect_ip}</td>
+									</tr>
+
+									<tr>
+										<th>クライアント担当者</th>
+										<td colspan="3">{owner}</td>
+									</tr>
+									
+									<tr>
+										<th>総評</th>
+										<td colspan="3">{review}</td>
+									</tr>
+
+									<tr>
+										<th>その他・注意事項</th>
+										<td colspan="3">{etc}</td>
+									</tr>
+
 								</tbody>
 								<tfoot></tfoot>
 							</table>
@@ -74,32 +136,36 @@
 								<table id="sorttable" class="table">
 									<thead>
 										<tr>
-											<th>履歴一覧</th>
+											<th>詳細</th>
 											<th>名前</th>
 											<th>ステータス</th>
-											<th>スケジュール</th>
-											<th>前回実行日</th>
-											<th>検出件数</th>
-											<th colspan="2">操作</th>
+											<th>実行日</th>
+											<th colspan="2"></th>
+
+											<!-- 											<th>検出件数</th> -->
+											<!-- 											<th colspan="2">操作</th> -->
 										</tr>
 									</thead>
 									<tbody>
 										{sub_list}
 										<tr class=" " title="sub_id={sub_id}">
-											<td><a href="javascript:setActionTarget('form_sub_list', '/sub_history/{sub_id}');">診断結果</a>
+											<td><a href="sub/{sub_id}">診断結果</a>
 											</td>
-											<td><a href="javascript:setActionTarget('form_sub_list', '/sub/{sub_id}');">{sub_name}</a>
-											</td>
+											<td>{sub_name}</td>
 											<td class="center">緊急停止</td>
-											<td class="center"></td>
 											<td class="center">&nbsp;</td>
-											<td class="center">&nbsp;</td>
-											<td class="center"><a href="javascript:void(0);" onclick="return conformDialog('/audit_set_status/{sub_id}/9','診断設定を無効にしてもよろしいですか？');"
+
+											<td class="setting_info_btn center"><a href="/profile_edit/{pr_id}">編集</a>
+											</td>
+											<td class="setting_info_btn center"><a href="/profile_del_conf/{pr_id}">削除</a>
+											</td>
+
+											<!--											<td class="center"><a href="javascript:void(0);" onclick="return conformDialog('/audit_set_status/{sub_id}/9','診断設定を無効にしてもよろしいですか？');"
 													title="診断設定を無効にします。自動クローリングや手動クローリング用プロキシも停止します。">無効</a>
-											</td>
-											<td class="center"><input type="button" name="button_audit_terminate" id="button_audit_terminate" value="緊急停止"
-												onclick="return conformDialog('/audit_terminate/{sub_id}','診断を緊急停止してもよろしいですか？');" />
-											</td>
+ 											</td> -->
+											<!-- 											<td class="center"><input type="button" name="button_audit_terminate" id="button_audit_terminate" value="緊急停止" 
+												onclick="return conformDialog('/audit_terminate/{sub_id}','診断を緊急停止してもよろしいですか？');" />-->
+											<!-- 											</td> -->
 										</tr>
 										{/sub_list}
 									</tbody>
@@ -107,18 +173,12 @@
 							</div>
 						</form>
 
-						<div class="operation">
-							<input type="button" name="button_subprofile_edit" id="button_subprofile_edit" value="新規登録"
-								onclick="setActionTarget('form_subprofile_list', '/subprofile_edit/{pr_id}');" />
-						</div>
 					</div>
 
 					<div class="box-footer clearfix">
-						<div class="pull-right">
-							{pagination}
-						</div>
+						<div class="pull-right">{pagination}</div>
 					</div>
-					
+
 				</div>
 				<!-- /.profile info -->
 

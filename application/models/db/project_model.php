@@ -21,12 +21,19 @@ class Project_model extends MY_Model {
 		$this->db->select('
 				 pr.project_id as pr_id
 				,pr.project_name as name
+				,pr.status 
 				,pr.pre_start_date as pre_start
 				,pr.pre_end_date as pre_end
 				,pr.start_date as start
 				,pr.end_date as end
-				,pr.owner as owner
-				,"http://www.google.com" as url '  //TODO modify me
+				,pr.way 
+				,pr.view_count 
+				,pr.client_owner as owner
+				,pr.owner as executor
+				,pr.url 
+				,pr.connect_ip 
+				,pr.location  
+				,pr.review'
 		);
 		//
 		$this->db->from('project pr');
